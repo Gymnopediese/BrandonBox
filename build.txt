@@ -1,0 +1,4 @@
+displayName = BrandonBox2
+author = PajymaBoy
+version = 0.35
+buildIgnore=*.csproj, *.user, obj\*, bin\*, .vs\*, old\*

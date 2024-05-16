@@ -1,0 +1,355 @@
+NPCs: {
+	ExampleBoneMerchant.DisplayName: Example Bone Merchant
+
+	Creeper: {
+		DisplayName: Creeper
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeBiome: J'aime bien {BiomeName}.
+			DislikeBiome: Je n'aime pas {BiomeName}.
+			LoveNPC: J'adore {NPCName}.
+			LikeNPC: J'aime bien {NPCName}.
+			DislikeNPC: Je n'aime pas {NPCName}.
+			HateNPC: Je déteste {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	Levy: {
+		DisplayName: Levy
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeBiome: J'aime bien {BiomeName}.
+			DislikeBiome: Je n'aime pas {BiomeName}.
+			LoveNPC: J'adore {NPCName}.
+			LikeNPC: J'aime bien {NPCName}.
+			DislikeNPC: Je n'aime pas {NPCName}.
+			HateNPC: Je déteste {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	RainMan.DisplayName: Rain Man
+
+	Ninja: {
+		DisplayName: Ninja
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeBiome: J'aime bien {BiomeName}.
+			DislikeBiome: Je n'aime pas {BiomeName}.
+			LoveNPC: J'adore {NPCName}.
+			LikeNPC: J'aime bien {NPCName}.
+			DislikeNPC: Je n'aime pas {NPCName}.
+			HateNPC: Je déteste {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	Death: {
+		DisplayName: Death
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeBiome: J'aime bien {BiomeName}.
+			DislikeBiome: Je n'aime pas {BiomeName}.
+			LoveNPC: J'adore {NPCName}.
+			LikeNPC: J'aime bien {NPCName}.
+			DislikeNPC: Je n'aime pas {NPCName}.
+			HateNPC: Je déteste {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	DaughterOfSun: {
+		DisplayName: Daughter Of Sun
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeBiome: J'aime bien {BiomeName}.
+			DislikeBiome: Je n'aime pas {BiomeName}.
+			LoveNPC: J'adore {NPCName}.
+			LikeNPC: J'aime bien {NPCName}.
+			DislikeNPC: Je n'aime pas {NPCName}.
+			HateNPC: Je déteste {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	FisherMan: {
+		DisplayName: Fisher Man
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeBiome: J'aime bien {BiomeName}.
+			DislikeBiome: Je n'aime pas {BiomeName}.
+			LoveNPC: J'adore {NPCName}.
+			LikeNPC: J'aime bien {NPCName}.
+			DislikeNPC: Je n'aime pas {NPCName}.
+			HateNPC: Je déteste {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	Archeologist: {
+		DisplayName: Archeologist
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeBiome: J'aime bien {BiomeName}.
+			DislikeBiome: Je n'aime pas {BiomeName}.
+			LoveNPC: J'adore {NPCName}.
+			LikeNPC: J'aime bien {NPCName}.
+			DislikeNPC: Je n'aime pas {NPCName}.
+			HateNPC: Je déteste {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	Poacher: {
+		DisplayName: Poacher
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeBiome: J'aime bien {BiomeName}.
+			DislikeBiome: Je n'aime pas {BiomeName}.
+			LoveNPC: J'adore {NPCName}.
+			LikeNPC: J'aime bien {NPCName}.
+			DislikeNPC: Je n'aime pas {NPCName}.
+			HateNPC: Je déteste {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	TVGuy: {
+		DisplayName: T V Guy
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeBiome: J'aime bien {BiomeName}.
+			DislikeBiome: Je n'aime pas {BiomeName}.
+			LoveNPC: J'adore {NPCName}.
+			LikeNPC: J'aime bien {NPCName}.
+			DislikeNPC: Je n'aime pas {NPCName}.
+			HateNPC: Je déteste {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	Gravedigger: {
+		DisplayName: Gravedigger
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeBiome: J'aime bien {BiomeName}.
+			DislikeBiome: Je n'aime pas {BiomeName}.
+			LoveNPC: J'adore {NPCName}.
+			LikeNPC: J'aime bien {NPCName}.
+			DislikeNPC: Je n'aime pas {NPCName}.
+			HateNPC: Je déteste {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	Villager: {
+		DisplayName: Villager
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	Villager0: {
+		DisplayName: Villager0
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	DaughterOfSunTrapped.DisplayName: Daughter Of Sun Trapped
+
+	Ronin: {
+		DisplayName: Ronin
+
+		TownNPCMood: {
+			Content: Je suis content.
+			NoHome: Je déteste ne pas avoir de maison.
+			FarFromHome: Je suis trop loin de chez moi.
+			LoveSpace: J'adore avoir tout cet espace.
+			DislikeCrowded: Je n'aime pas toute cette foule.
+			HateCrowded: Je déteste toute cette foule.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	TheCursed: {
+		TownNPCMood: {
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+			Content: I am content.
+			NoHome: I hate not having a home.
+			LoveSpace: I love having so much space.
+			FarFromHome: I am too far from home.
+		}
+
+		DisplayName: The Cursed
+	}
+}
+
+Items: {
+	RainWand: {
+		DisplayName: Rain Wand
+		Tooltip: A magical wand that can toggle rain.
+	}
+
+	SkinShuffle: {
+		DisplayName: Skin Shuffle
+		Tooltip: Shuffle your skin.
+	}
+
+	ZombieCure: {
+		DisplayName: Zombie Cure
+		Tooltip:
+			'''
+			Use this to cure a zombie and turn it into a villager.
+			It will then move into your town.
+			'''
+	}
+
+	Camera: {
+		Tooltip:
+			'''
+			Place this on a wall to watch the area.
+			(Requires a special keybind to use)
+			'''
+		DisplayName: Camera
+	}
+
+	EyeRecipe: {
+		DisplayName: Eye Recipe
+		Tooltip: To learn how to make an Eye Camera.
+	}
+
+	Recipe: {
+		DisplayName: Recipe
+		Tooltip: To learn how to make a Camera.
+	}
+
+	LensCamera: {
+		DisplayName: Lens Camera
+		Tooltip:
+			'''
+			To spy on your Town NPCs. 
+			(Requires a special keybind to use)
+			'''
+	}
+
+	EyeCamera: {
+		DisplayName: Eye Camera
+		Tooltip: What is down there?
+	}
+
+	EyeCameraRecipe: {
+		DisplayName: Eye Camera Recipe
+		Tooltip: To learn how to make an Eye Camera.
+	}
+
+	WallCameraRecipe: {
+		DisplayName: Wall Camera Recipe
+		Tooltip: To learn how to make a Camera.
+	}
+
+	LensCameraRecipe: {
+		Tooltip: ""
+		DisplayName: Lens Camera Recipe
+	}
+}
+
+Tiles.SafeZoneCertificat.MapEntry: Safe Zone Certificat
+
+Keybinds: {
+	NextCamera.DisplayName: Next Camera
+	PreviousCamera.DisplayName: Previous Camera
+}
+
+Projectiles.EyeBallCamera.DisplayName: Eye Ball Camera

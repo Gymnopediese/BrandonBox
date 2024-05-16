@@ -1,0 +1,25 @@
+I want you to make a bunch of information for my new terraria NPC
+
+The NPC is : 
+
+
+First do its catch phrases in the following format, be original, inspire you frome his information above:
+
+chat.Add("Catchphrase");
+chat.Add("Catchphrase");
+chat.Add("Catchphrase");
+...
+
+(do not forget the semicolon)
+
+Then I want a list of various original name for him in the following format:
+{
+	"Name1",
+	"Name2",
+	"Name3",
+	...
+}
+
+(its a c# string list)
+
+Then make it's description starting whit an emoji for the steam workshop
