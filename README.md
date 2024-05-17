@@ -14,7 +14,23 @@ The Tax Collector must be present in your village (He is frustrated by the poor 
 
 His house must be in a cemetery.
 
-![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager_Head.png)  **The Villager** : Once a zombie has been cured, it becomes a poor defenseless villager and will need a roof. You can cure an INFINITE number of zombies and therefore have an INFINITE number of villagers in your town !!! They will pay tax to both the tax collector and the grave digger.
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager_Head.png)
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager1_Head.png) 
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager2_Head.png) 
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager3_Head.png) 
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager4_Head.png) 
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager5_Head.png) 
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager6_Head.png) 
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager7_Head.png) 
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager8_Head.png) 
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager9_Head.png)
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager10_Head.png)
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager11_Head.png)
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager12_Head.png)
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager13_Head.png)
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager14_Head.png)
+
+**The Villager** : Once a zombie has been cured, it becomes a poor defenseless villager and will need a roof. You can cure an INFINITE number of zombies and therefore have an INFINITE number of villagers in your town !!! They will pay tax to both the tax collector and the grave digger.
 
 ### Spawn conditions
 
