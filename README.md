@@ -8,7 +8,7 @@ Welcome to BrandonBox 2.0, a Terraria mod that brings a plethora of new characte
 
 ### Spawn conditions
 
-Le Collecteur de tax doit etre present dans votre village (Il est frustre du pietre travail que fait cet homme et vas donc collecter les taxes a sa maniere...)
+Le Collecteur de tax doit etre present dans votre village (Il est frustre du pietre travail que fait cet homme et vas donc collecter les taxes a sa maniere...(2 d'argent par heure dans le jeu))
 
 ### House conditions
 
@@ -70,6 +70,16 @@ You died 100 times.
 
 Sa maison doit etre dans un cimetier, il est bonne ami avec le Gravedigger
 
+![Death](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/TheCursed/TheCursed_Head.png) **The Cursed**: Invoquer par le Gravedigger apres votre demande, The cursed will curse your village... Donc soyez sur de vous avant de l'invoquer. Il demandera tous les 3 jours un sacrifice parmis les Villagers, si jamais au bout de trois jours il n'y a pas de Villager a sacrifier, il tuera tous les habitant et les joueurs avant de se donner la mort lui meme. Neanmoin il aidera le Gravedigger a mettre la pression sur les habitant et multiplira les Taxes par 10.
+
+### Spawn conditions
+
+There is at least one villager in town, the Gravedigger is in town and one of the mechanical boss has been defeated.
+
+### House conditions
+
+Invoquez le en placeant trois bougis d'eau dans sa maison. !!! Attention !!! Il est conseiller de l'invoquer qu'une fois que votre village compte au moin une dizaine de villageois.
+
 ![Rain Man](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/RainMan/RainMan_Head.png) **The Rain Man**: A chill character who arrives when the rain falls, he sells an array of water-related items – including one that can control the weather itself! Don't expect him to stay to long here, he just like the rain...
 
 ### Spawn conditions
@@ -95,6 +105,5 @@ No requirement but he might sell more stuff if his in a dynastiy wood house.
 ### House conditions
 
 Il suffit d'avoir un animal d'or en cage sur vous.
-
 
 Dive into BrandonBox 2.0 and discover a world of endless possibilities, where every NPC brings a unique story and opportunity for adventure!

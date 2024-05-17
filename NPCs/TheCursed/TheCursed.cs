@@ -43,6 +43,9 @@ namespace BrandonBox.NPCs.TheCursed
 				}
 				else
 				{
+					for (; i < Main.npc.Length; i++)
+						if (Main.npc[i].townNPC && !Main.npc[i].homeless)
+							Main.npc[i].SimpleStrikeNPC(9999, 0);
 					foreach (var player in Main.player)
 						if (player.active)
 							player.KillMe(PlayerDeathReason.ByCustomReason(player.name +" was killed by the anger of the cursed.") , 99999, 0);
@@ -96,6 +99,8 @@ namespace BrandonBox.NPCs.TheCursed
 
 
 		public override bool CanTownNPCSpawn(int numTownNPCs) { // Requirements for the town NPC to spawn.
+			if (TheCursedCollection.counter < 24 * 3)
+				return false;
 			return (NPC.AnyNPCs(ModContent.NPCType<NPCs.Villager.Villager>()) && NPC.AnyNPCs(ModContent.NPCType<NPCs.Gravedigger.Gravedigger>()) && (NPC.downedMechBoss1 || NPC.downedMechBoss2 || NPC.downedMechBoss3));
 		}
 
