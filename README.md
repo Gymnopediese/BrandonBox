@@ -102,7 +102,7 @@ No requirement but he might sell more stuff if he is in a dynasty wood house.
 
 ![Poacher](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Poacher/Poacher_Head.png)  **Poacher** : Half-panda, half-suspicious seller, this character deals in rare caged animals. While his past might be questionable, his inventory is undeniably intriguing.
 
-### House conditions
+### Spawn conditions
 
 Simply have a gold caged animal on you.
 

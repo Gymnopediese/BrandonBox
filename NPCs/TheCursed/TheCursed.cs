@@ -32,11 +32,17 @@ namespace BrandonBox.NPCs.TheCursed
 			if (counter >= 24 * 3 && NPC.AnyNPCs(ModContent.NPCType<TheCursed>()))
 			{
 				int i = 0;
+				bool hasany = false;
 				WeightedRandom<NPC> villagers = new WeightedRandom<NPC>();
 				for (; i < Main.npc.Length; i++)
-					if (Main.npc[i].type == ModContent.NPCType<NPCs.Villager.Villager>())
+				{
+					if (Main.npc[i].type == ModContent.NPCType<NPCs.Villager.Villager>() && Main.npc[i].active && !Main.npc[i].homeless)
+					{
 						villagers.Add(Main.npc[i]);
-				if (NPC.AnyNPCs(ModContent.NPCType<NPCs.Villager.Villager>()))
+						hasany = true;
+					}
+				}
+				if (hasany)
 				{
 					NPC villager = villagers;
 					villager.SimpleStrikeNPC(9999, 0);
