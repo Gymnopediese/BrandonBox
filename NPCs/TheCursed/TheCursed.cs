@@ -24,11 +24,9 @@ namespace BrandonBox.NPCs.TheCursed
 	public class TheCursedCollection : ModSystem
 	{
 		public static int counter = 9999;
-
 		public override void PreUpdateTime() {
 			if ((Main.time + 1800) % 3600 == 0)
 				counter+=1;
-
 			if (counter >= 24 * 3 && NPC.AnyNPCs(ModContent.NPCType<TheCursed>()))
 			{
 				int i = 0;
@@ -98,8 +96,6 @@ namespace BrandonBox.NPCs.TheCursed
 			NPC.HitSound = SoundID.NPCHit1;
 			NPC.DeathSound = SoundID.NPCDeath1;
 			NPC.knockBackResist = 0.5f;
-			
-
 			AnimationType = NPCID.Guide;
 		}
 
@@ -110,7 +106,7 @@ namespace BrandonBox.NPCs.TheCursed
 			return (NPC.AnyNPCs(ModContent.NPCType<NPCs.Villager.Villager>()) && NPC.AnyNPCs(ModContent.NPCType<NPCs.Gravedigger.Gravedigger>()) && (NPC.downedMechBoss1 || NPC.downedMechBoss2 || NPC.downedMechBoss3));
 		}
 
-public override bool CheckConditions(int left, int right, int top, int bottom) {
+		public override bool CheckConditions(int left, int right, int top, int bottom) {
 			int score = 0;
 			for (int x = left -10; x <= right + 10; x++) {
 				for (int y = top -10; y <= bottom + 10; y++) {
@@ -129,21 +125,13 @@ public override bool CheckConditions(int left, int right, int top, int bottom) {
 
 		public override List<string> SetNPCNameList() {
 			return new List<string>(){
-"Harold Graves",
-"Samuel Stone",
-"William Diggs",
-"George Graveley",
-"Thomas Tombstone",
-"Edward Earth",
-"Arthur Ashes",
-"Frederick Foss",
-"Charles Coffin",
-"Joseph Bones"
-};
+			"M",
+			};
 		}
 
 		public override string GetChat() {
 			WeightedRandom<string> chat = new WeightedRandom<string>();
+			chat.Add("I am the cursed, I will bring the end of this village.", 1.0);
 			string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
 			return chosenChat;
 		}

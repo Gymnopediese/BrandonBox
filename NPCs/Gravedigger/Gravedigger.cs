@@ -121,13 +121,36 @@ namespace BrandonBox.NPCs.Gravedigger
 
 		public override List<string> SetNPCNameList() {
 			return new List<string>(){
-"M",
-};
+			"Harold Graves",
+			"Samuel Stone",
+			"William Diggs",
+			"George Graveley",
+			"Thomas Tombstone",
+			"Edward Earth",
+			"Arthur Ashes",
+			"Frederick Foss",
+			"Charles Coffin",
+			"Joseph Bones"
+			};
 		}
 
 		public override string GetChat() {
 			WeightedRandom<string> chat = new WeightedRandom<string>();
-			chat.Add("Don't talk to me.");
+			chat.Add("Come closer, my friend, let's talk business. I've got deals that'll make your head spin.");
+			chat.Add("They say every graveyard has its secrets. Lucky for you, I happen to be an expert in secrets.");
+			chat.Add("Ah, the sweet scent of fresh dirt and freshly made deals. It's a gravedigger's paradise.");
+			chat.Add("Don't mind the skeletons in my closet, they're just old business partners.");
+			chat.Add("You know, I'm not just a gravedigger, I'm a grave enthusiast. There's a difference, you know.");
+			chat.Add("Folks say I've got a sixth sense for sniffing out opportunity. Personally, I think it's more like seven or eight.");
+			chat.Add("You'd be surprised what people leave behind when they depart. And I'm not just talking about their bodies.");
+			chat.Add("They say every coin has two sides. I prefer to think of it as heads, tails, and the little slice I take for myself.");
+			chat.Add("What's a little dirt between friends? Trust me, it's nothing compared to the secrets I keep.");
+			chat.Add("If you're looking for a friend in low places, you've come to the right gravedigger.");
+			chat.Add("Step right up, get your village permits here, no questions asked!");
+			chat.Add("Taxes are the lifeblood of civilization, and I'm here to ensure every drop is squeezed out!");
+			chat.Add("Need a little extra muscle? I know a guy who knows a guy... for a price.");
+			chat.Add("You wouldn't believe the secrets buried beneath these lands, but hey, a gravedigger's gotta keep some mysteries.");
+			chat.Add("Trust me, friend, you don't want to see what happens when you don't pay your dues. Let's keep things civil, shall we?");
 			string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
 			return chosenChat;
 		}
