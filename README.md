@@ -24,6 +24,10 @@ Any zombie that has been applied the Zombie Cure item.
 
 His house must have a bed, normal humans need sleep...
 
+### Specificities
+
+Since having infinite Villager added to the npc pannel would be a mess and most likely impossible, the villager exist only once in the npc pannel. By talking to any npc, the focus will be given to him and you'll be able to select him an house. For the moment they cannot join an house by there own, you will have to assign one to them. (I'm working on it)
+
 ![TVGuy](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/TVGuy/TVGuy_Head.png)  **TVGuy** : This former TV presenter completely lost it one day while he was live in front of millions of people... Since then, he has been gradually sinking into paranoia, believing in every conspiracy theory that comes his way. He particularly believes in aliens and it's to investigate them that he will come to your town. He's developing his own camera system on his own, he's still working on it so don't expect him to sell you anything until he's found all the necessary ingredients. He needs cables for example and can't seem to find any.
 
 ### Spawn conditions
