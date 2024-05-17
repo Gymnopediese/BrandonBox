@@ -4,47 +4,47 @@ Welcome to BrandonBox 2.0, a Terraria mod that brings a plethora of new characte
 
 ## Introducing New NPCs:
 
-![Gravedigger](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Gravedigger/Gravedigger_Head.png) **The Gravedigger**: Cet homme n'aime que deux choses : l'argent et chercher de l'argent dans des tombes. Il est constement dans les megouille, tous pour gagner le plus d'argent. Il vent des cure de zombie, appament ca permet de guerir les zombie et de les retourner a leur etat de villageois... Il n'hesitera pas a modir le village pour augmenter ses gains...
+![Gravedigger](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Gravedigger/Gravedigger_Head.png)  **The Gravedigger** : This man loves only two things: money and searching for money in graves. He constantly roams graveyards, all to make as much money as possible. He sells zombie cures, apparently allowing zombies to be cured and returned to their villager state... He won't hesitate to curse the village to increase his profits...
 
 ### Spawn conditions
 
-Le Collecteur de tax doit etre present dans votre village (Il est frustre du pietre travail que fait cet homme et vas donc collecter les taxes a sa maniere...(2 d'argent par heure dans le jeu))
+The Tax Collector must be present in your village (He is frustrated by the poor work of this man and will therefore collect taxes in his own way...(2 silver per in game hours))
 
 ### House conditions
 
-Sa maison doit etre dans un cimetiere.
+His house must be in a cemetery.
 
-![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager_Head.png) **The Villager**: Une fois qu'un zombie a ete guerie, il devient un pauvre villageois sans defence et aura besoin d'un toit, vous pouvez guerir une INFINITE de zombie et donc avoir une infinite de villageois dans votre ville !!! They will pay tax to both the tax collector and the grave digger.
+![Villager](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Villager/Villager_Head.png)  **The Villager** : Once a zombie has been cured, it becomes a poor defenseless villager and will need a roof. You can cure an INFINITE number of zombies and therefore have an INFINITE number of villagers in your town !!! They will pay tax to both the tax collector and the grave digger.
 
 ### Spawn conditions
 
-N'importe quelle zombie sur lequelle a ete applique l'item Zombie Cure
+Any zombie that has been applied the Zombie Cure item.
 
 ### House conditions
 
-Sa maison doit poceder un lit, les humain normaux ont besoin de someil...
+His house must have a bed, normal humans need sleep...
 
-![TVGuy](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/TVGuy/TVGuy_Head.png) **TVGuy**: Cet ancien presentateur tele a completement perdu la boule un jour alors qu'il etait en live devant des millions de gens... Depuis ils sombre petit a petit dans la paranoia, croyant en toute les theorie du complot qui lui tombe sous le nez. Il croit tous particulierement au alien et c'est pour investiguer dessus qu'il viendra dans votre ville. Il develope dans son coin son propre system de camera, il travaille encore dessus alors ne vous attendez pas a ce qu'il vous vendes quoi que ce soit avant d'avoit trouver tous les ingredients necessaire. Il a besoin de cable par exemple et n'arrive pas a en trouver.
+![TVGuy](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/TVGuy/TVGuy_Head.png)  **TVGuy** : This former TV presenter completely lost it one day while he was live in front of millions of people... Since then, he has been gradually sinking into paranoia, believing in every conspiracy theory that comes his way. He particularly believes in aliens and it's to investigate them that he will come to your town. He's developing his own camera system on his own, he's still working on it so don't expect him to sell you anything until he's found all the necessary ingredients. He needs cables for example and can't seem to find any.
 
 ### Spawn conditions
 
-You have mined meteorite, he will then be interesed by this material comming from outerspace.
+You have mined meteorite, he will then be interested in this material coming from outer space.
 
 ### House conditions
 
-Sa maison doit etre isoler de n'importe quelle autre NPCs, il ne peux faire confiance a personne...
+His house must be isolated from any other NPCs, he can't trust anyone...
 
-![Daughter of the Sun](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/DaughterOfSun/DaughterOfSun_Head.png) **The Daughter of the Sun**: Held captive by harpies, the Daughter of the Sun needs your help to reclaim her freedom. Elle passera ensuite un contrat avec toi : Offer her some gold, and she'll convince her father to rise earlier in the day!
+![Daughter of the Sun](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/DaughterOfSun/DaughterOfSun_Head.png)  **The Daughter of the Sun** : Held captive by harpies, the Daughter of the Sun needs your help to reclaim her freedom. She will then make a contract with you: Offer her some gold, and she'll convince her father to rise earlier in the day!
 
 ### Spawn conditions
 
-Spawn at any moment in floating islands, just need to be resqued.
+Spawn at any moment in floating islands, just need to be rescued.
 
 ### House conditions
 
-Sa maison doit etre faite de nuage sinnon elle ne s'y installera pas.
+Her house must be made of clouds otherwise she will not settle there.
 
-![FisherMan](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/FisherMan/FisherMan_Head.png) **The FisherMan**: A master angler and friend of the Angler, this character moves into a home after you've completed 75 angler quests. Just don't mention his fishing accident – it's a sensitive topic.
+![FisherMan](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/FisherMan/FisherMan_Head.png)  **The FisherMan** : A master angler and friend of the Angler, this character moves into a home after you've completed 75 angler quests. Just don't mention his fishing accident – it's a sensitive topic.
 
 ### Spawn conditions
 
@@ -52,15 +52,15 @@ Finish 75 Angler Quest.
 
 ### House conditions
 
-He needs a pool in his house of about 1/3 of the space for fishing purpose
+He needs a pool in his house, about 1/3 of the space, for fishing purposes.
 
-![Creeper](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Creeper/Creeper_Head.png) **The Creeper**: Once a menace from distant lands, this reformed character now peddles explosives with a smile. Thanks to anger management therapy, he's traded detonations for deals, offering every block he distroyed trying to give them a second life.
+![Creeper](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Creeper/Creeper_Head.png)  **The Creeper** : Once a menace from distant lands, this reformed character now peddles explosives with a smile. Thanks to anger management therapy, he's traded detonations for deals, offering every block he destroyed trying to give them a second life.
 
 ### Spawn conditions
 
-Spawn after the player exploded himself with the item Explosifs, he thinks you have anger issues like he used to have and want to help you.
+Spawn after the player explodes themselves with the item Explosives, he thinks you have anger issues like he used to have and wants to help you.
 
-![Death](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Death/Death_Head.png) **The Death**: After countless attempts to claim your life, Death itself come to your town. For a mere copper, he can end your existence...
+![Death](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Death/Death_Head.png)  **The Death** : After countless attempts to claim your life, Death itself comes to your town. For a mere copper, he can end your existence...
 
 ### Spawn conditions
 
@@ -68,19 +68,19 @@ You died 100 times.
 
 ### House conditions
 
-Sa maison doit etre dans un cimetier, il est bonne ami avec le Gravedigger
+His house must be in a cemetery, he is good friends with the Gravedigger.
 
-![Death](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/TheCursed/TheCursed_Head.png) **The Cursed**: Invoquer par le Gravedigger apres votre demande, The cursed will curse your village... Donc soyez sur de vous avant de l'invoquer. Il demandera tous les 3 jours un sacrifice parmis les Villagers, si jamais au bout de trois jours il n'y a pas de Villager a sacrifier, il tuera tous les habitant et les joueurs avant de se donner la mort lui meme. Neanmoin il aidera le Gravedigger a mettre la pression sur les habitant et multiplira les Taxes par 10.
+![Death](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/TheCursed/TheCursed_Head.png)  **The Cursed** : Summoned by the Gravedigger after your request, The Cursed will curse your village... So be sure of yourself before summoning him. He will ask for a sacrifice among the Villagers every 3 days, if after three days there is no Villager to sacrifice, he will kill all the inhabitants and players before taking his own life. However, he will help the Gravedigger to put pressure on the inhabitants and will multiply its taxes by 10.
 
 ### Spawn conditions
 
-There is at least one villager in town, the Gravedigger is in town and one of the mechanical boss has been defeated.
+There is at least one villager in town, the Gravedigger is in town and one of the mechanical bosses has been defeated.
 
 ### House conditions
 
-Invoquez le en placeant trois bougis d'eau dans sa maison. !!! Attention !!! Il est conseiller de l'invoquer qu'une fois que votre village compte au moin une dizaine de villageois.
+Summon him by placing three water candles in his house. !!! Warning !!! It is advisable to summon him only once your village has at least a dozen villagers.
 
-![Rain Man](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/RainMan/RainMan_Head.png) **The Rain Man**: A chill character who arrives when the rain falls, he sells an array of water-related items – including one that can control the weather itself! Don't expect him to stay to long here, he just like the rain...
+![Rain Man](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/RainMan/RainMan_Head.png)  **The Rain Man** : A chill character who arrives when the rain falls, he sells an array of water-related items – including one that can control the weather itself! Don't expect him to stay too long here, he just likes the rain...
 
 ### Spawn conditions
 
@@ -88,22 +88,22 @@ During the rain.
 
 ### House conditions
 
-Just like the bone merchant, he will never come to your town
+Just like the Bone Merchant, he will never come to your town.
 
-![Ninja](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Ronin/Ronin_Head.png) **Ninja**: A survivor of the Ninja Village's fall to the Slim King, this ninja pays homage to fallen comrades by selling items from his homeland. The mighty ninja eaten by the slim king happens to be his father...
+![Ninja](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Ronin/Ronin_Head.png)  **Ninja** : A survivor of the Ninja Village's fall to the Slim King, this ninja pays homage to fallen comrades by selling items from his homeland. The mighty ninja eaten by the slim king happens to be his father...
 
 ### Spawn conditions
 
-The king slime has been defeated
+The King Slime has been defeated.
 
 ### House conditions
 
-No requirement but he might sell more stuff if his in a dynastiy wood house.
+No requirement but he might sell more stuff if he is in a dynasty wood house.
 
-![Poacher](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Poacher/Poacher_Head.png) **Poacher**: Half-panda, half-suspicious seller, this character deals in rare caged animals. While his past might be questionable, his inventory is undeniably intriguing.
+![Poacher](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Poacher/Poacher_Head.png)  **Poacher** : Half-panda, half-suspicious seller, this character deals in rare caged animals. While his past might be questionable, his inventory is undeniably intriguing.
 
 ### House conditions
 
-Il suffit d'avoir un animal d'or en cage sur vous.
+Simply have a gold caged animal on you.
 
 Dive into BrandonBox 2.0 and discover a world of endless possibilities, where every NPC brings a unique story and opportunity for adventure!
