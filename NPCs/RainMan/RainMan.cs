@@ -57,27 +57,6 @@ namespace BrandonBox.NPCs.RainMan
 			//In order to do this, we simply make this hook return true, which will make the game call the TownNPCName method when spawning the NPC to determine the NPC's name.
 			NPCID.Sets.SpawnsWithCustomName[Type] = true;
 
-			// Connects this NPC with a custom emote.
-			// This makes it when the NPC is in the world, other NPCs will "talk about him".
-			// !Important! This is only for the emote bubble, not the actual dialogue.
-			// NPCID.Sets.FaceEmote[Type] = ModContent.EmoteBubbleType<ExampleBoneMerchantEmote>();
-
-			//The vanilla Bone Merchant cannot interact with doors (open or close them, specifically), but if you want your NPC to be able to interact with them despite this,
-			//uncomment this line below.
-			//NPCID.Sets.AllowDoorInteraction[Type] = true;
-
-			// Influences how the NPC looks in the Bestiary
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers() {
-				Velocity = 1f, // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
-				Direction = 1 // -1 is left and 1 is right. NPCs are drawn facing the left by default but ExamplePerson will be drawn facing the right
-			};
-
-			NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
-
-			NPCProfile = new Profiles.StackedNPCProfile(
-				new Profiles.DefaultNPCProfile(Texture, -1),
-				new Profiles.DefaultNPCProfile(Texture + "_Shimmer", -1)
-			);
 		}
 
 		public override void SetDefaults() {
@@ -98,48 +77,6 @@ namespace BrandonBox.NPCs.RainMan
 		//Make sure to allow your NPC to chat, since being "like a town NPC" doesn't automatically allow for chatting.
 		public override bool CanChat() {
 			return true;
-		}
-
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) {
-			// We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				// Sets the preferred biomes of this town NPC listed in the bestiary.
-				// With Town NPCs, you usually set this to what biome it likes the most in regards to NPC happiness.
-				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Underground,
-
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("Hailing from a mysterious greyscale cube world, the Example Bone Merchant will show you how to make a mysterious merchant underground with tModLoader."),
-
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				// new FlavorTextBestiaryInfoElement("Mods.ExampleMod.Bestiary.ExampleBoneMerchant")
-			});
-		}
-
-		public override void HitEffect(NPC.HitInfo hit) {
-			// Causes dust to spawn when the NPC takes damage.
-			int num = NPC.life > 0 ? 1 : 5;
-
-			// for (int k = 0; k < num; k++) {
-			// 	Dust.NewDust(NPC.position, NPC.width, NPC.height, ModContent.DustType<Sparkle>());
-			// }
-
-			// Create gore when the NPC is killed.
-			if (Main.netMode != NetmodeID.Server && NPC.life <= 0) {
-				// Retrieve the gore types. This NPC only has shimmer variants. (6 total gores)
-				string variant = "";
-				if (NPC.IsShimmerVariant) variant += "_Shimmer";
-				int headGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Head").Type;
-				int armGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Arm").Type;
-				int legGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Leg").Type;
-
-				// Spawn the gores. The positions of the arms and legs are lowered for a more natural look.
-				Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, headGore, 1f);
-				Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 20), NPC.velocity, armGore);
-				Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 20), NPC.velocity, armGore);
-				Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
-				Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
-			}
 		}
 
 		public override ITownNPCProfile TownNPCProfile() {
@@ -163,21 +100,15 @@ namespace BrandonBox.NPCs.RainMan
 		}
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-			//If any player is underground and has an example item in their inventory, the example bone merchant will have a slight chance to spawn.
-			if (spawnInfo.Player.ZoneRain){// && spawnInfo.Player.inventory.Any(item => item.type == ModContent.ItemType<ExampleItem>())) {
+			if (!ModContent.GetInstance<Systems.NPCsConfigs>().RainMan) return 0f;
+			if (spawnInfo.Player.ZoneRain)
 				return 0.05f;
-			}
-			//Else, the example bone merchant will not spawn if the above conditions are not met.
 			return 0f;
 		}
 
 		public override string GetChat() {
 			WeightedRandom<string> chat = new WeightedRandom<string>();
-
-			// These are things that the NPC has a chance of telling you when you talk to it.
-			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExampleBoneMerchant.StandardDialogue1"));
-			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExampleBoneMerchant.StandardDialogue2"));
-			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExampleBoneMerchant.StandardDialogue3"));
+			
 			chat.Add("Hey there! Looks like another rainy day in Terraria.");
 			chat.Add("Did you know that raindrops aren't actually tear-shaped? They're more like tiny spheres!");
 			chat.Add("I've heard that in some cultures, rain is considered a blessing from the gods.");
@@ -187,7 +118,7 @@ namespace BrandonBox.NPCs.RainMan
 			chat.Add("If you ever need advice on dealing with rain-related challenges, just ask! I'm here to help.");
 			chat.Add("I'm from a mysterious greyscale cube world.");
 			chat.Add("Looks like it's raining cats and dogs out there!");
-			return chat; // chat is implicitly cast to a string.
+			return chat;
 		}
 
 		public override void SetChatButtons(ref string button, ref string button2) { // What the chat buttons are when you open up the chat UI

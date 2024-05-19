@@ -46,9 +46,9 @@ namespace BrandonBox.NPCs.Gravedigger
 				}
 				for (int i = 0; i < Main.npc.Length; i++)
 				{
-					if (Main.npc[i].townNPC && !Main.npc[i].homeless && Main.npc[i].type != ModContent.NPCType<Gravedigger>() && Main.npc[i].type == ModContent.NPCType<NPCs.TheCursed.TheCursed>())
+					if (Main.npc[i].townNPC && !Main.npc[i].homeless && Main.npc[i].type != ModContent.NPCType<Gravedigger>() && Main.npc[i].type == ModContent.NPCType<NPCs.Cursed.Cursed>())
 					{
-						if (NPC.AnyNPCs(ModContent.NPCType<NPCs.TheCursed.TheCursed>()))
+						if (NPC.AnyNPCs(ModContent.NPCType<NPCs.Cursed.Cursed>()))
 							Taxes += 2000;
 						else
 							Taxes += 200;
@@ -99,7 +99,8 @@ namespace BrandonBox.NPCs.Gravedigger
 			AnimationType = NPCID.Guide;
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs) { 
+		public override bool CanTownNPCSpawn(int numTownNPCs) {
+			if (!ModContent.GetInstance<Systems.NPCsConfigs>().Gravedigger) return false;
 			return (NPC.AnyNPCs(NPCID.TaxCollector));
 		}
 

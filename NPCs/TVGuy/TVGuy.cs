@@ -126,6 +126,7 @@ namespace BrandonBox.NPCs.TVGuy
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs) { // Requirements for the town NPC to spawn.
+			if (!ModContent.GetInstance<Systems.NPCsConfigs>().TVGuy) return false;
 			if (TVGuyAllowed.allowed)
 				return true;
 			foreach (var player in Main.ActivePlayers)
@@ -247,12 +248,12 @@ namespace BrandonBox.NPCs.TVGuy
 			var npcShop = new NPCShop(Type, ShopName);
 				// .Add<TVRemote>();
 
-			npcShop.Add(ModContent.ItemType<Items.WallCamera.WallCameraRecipe>(), new Condition("", () => !Items.Recipe.RecipeLearner.learnedRecipes.Contains("WallCamera")));
-			npcShop.Add(ModContent.ItemType<Items.LensCamera.LensCameraRecipe>(), new Condition("", () => !Items.Recipe.RecipeLearner.learnedRecipes.Contains("LensCamera")));
-
+			npcShop.Add(new Item(ModContent.ItemType<Items.WallCamera.WallCameraRecipe>()) { buyOnce = true }, new Condition("", () => !Items.Recipe.RecipeLearner.learnedRecipes.Contains("WallCamera")));
+			// npcShop.Add(new ModContent.ItemType<Items.WallCamera.WallCameraRecipe>() { buyOnce = true }, new Condition("", () => !Items.Recipe.RecipeLearner.learnedRecipes.Contains("WallCamera")));
+			npcShop.Add(new Item(ModContent.ItemType<Items.LensCamera.LensCameraRecipe>()) { buyOnce = true }, new Condition("", () => !Items.Recipe.RecipeLearner.learnedRecipes.Contains("LensCamera")));
 
 			if (Main.hardMode) {
-				npcShop.Add(ModContent.ItemType<Items.EyeCamera.EyeCamera>(), new Condition("", () => !Items.Recipe.RecipeLearner.learnedRecipes.Contains("EyeCamera")));
+				npcShop.Add(new Item(ModContent.ItemType<Items.EyeCamera.EyeCamera>()) { buyOnce = true }, new Condition("", () => !Items.Recipe.RecipeLearner.learnedRecipes.Contains("EyeCamera")));
 			}
 			npcShop.Register(); // Name of this shop tab
 		}

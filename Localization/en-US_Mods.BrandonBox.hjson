@@ -260,6 +260,50 @@ NPCs: {
 		}
 	}
 
+	TheCursed: {
+		DisplayName: The Cursed
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	Cursed: {
+		DisplayName: Cursed
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
+
+	Pickpocket: {
+		DisplayName: Pickpocket
+
+		TownNPCMood: {
+			Content: I am content.
+			NoHome: I hate not having a home.
+			FarFromHome: I am too far from home.
+			LoveSpace: I love having so much space.
+			DislikeCrowded: I dislike how crowded I am.
+			HateCrowded: I hate how crowded I am.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+	}
 }
 
 Items: {
@@ -339,3 +383,145 @@ Keybinds: {
 }
 
 Projectiles.EyeBallCamera.DisplayName: Eye Ball Camera
+
+Configs: {
+	BrandonBoxConfigs: {
+		ExampleWingsToggle: {
+			Tooltip: ""
+			Label: Example Wings Toggle
+		}
+
+		Headers.Items: Items Header
+		DisplayName: Brandon Box Configs
+
+		WeaponWithGrowingDamageToggle: {
+			Label: Weapon With Growing Damage Toggle
+			Tooltip: ""
+		}
+	}
+
+	NPCs: {
+		DisplayName: NPCs
+		Headers.Items: Items Header
+
+		Creeper: {
+			Label: Creeper
+			Tooltip: ""
+		}
+
+		TheCursed: {
+			Label: The Cursed
+			Tooltip: ""
+		}
+
+		DaughterOfSun: {
+			Label: Daughter Of Sun
+			Tooltip: ""
+		}
+
+		Death: {
+			Label: Death
+			Tooltip: ""
+		}
+
+		FisherMan: {
+			Label: Fisher Man
+			Tooltip: ""
+		}
+
+		Gravedigger: {
+			Label: Gravedigger
+			Tooltip: ""
+		}
+
+		RainMan: {
+			Label: Rain Man
+			Tooltip: ""
+		}
+
+		Ronin: {
+			Label: Ronin
+			Tooltip: ""
+		}
+
+		TVGuy: {
+			Label: T V Guy
+			Tooltip: ""
+		}
+
+		Villager: {
+			Label: Villager
+			Tooltip: ""
+		}
+
+		Poacher: {
+			Label: Poacher
+			Tooltip: ""
+		}
+	}
+
+	NPCsConfigs: {
+		DisplayName: NPCs Configs
+		Headers.ToggleNPCs: Toggle NPCs
+
+		Villager: {
+			Tooltip: If you save the config, all the existing instance of the Villager will be removed !
+			Label: Villager
+		}
+
+		TVGuy: {
+			Tooltip: If you save the config, all the existing instance of the TVGuy will be removed !
+			Label: T V Guy
+		}
+
+		Ronin: {
+			Tooltip: If you save the config, all the existing instance of the Ronin will be removed !
+			Label: Ronin
+		}
+
+		RainMan: {
+			Tooltip: If you save the config, all the existing instance of the RainMan will be removed !
+			Label: Rain Man
+		}
+
+		Poacher: {
+			Tooltip: If you save the config, all the existing instance of the Poacher will be removed !
+			Label: Poacher
+		}
+
+		Gravedigger: {
+			Tooltip: If you save the config, all the existing instance of the Gravedigger will be removed !
+			Label: Gravedigger
+		}
+
+		FisherMan: {
+			Tooltip: If you save the config, all the existing instance of the FisherMan will be removed !
+			Label: Fisher Man
+		}
+
+		Death: {
+			Tooltip: If you save the config, all the existing instance of the Death will be removed !
+			Label: Death
+		}
+
+		DaughterOfSun: {
+			Tooltip: If you save the config, all the existing instance of the DaughterOfSun will be removed !
+			Label: Daughter Of Sun
+		}
+
+		Cursed: {
+			Tooltip: If you save the config, all the existing instance of the TheCursed will be removed !
+			Label: Cursed
+		}
+
+		Creeper: {
+			Tooltip: If you save the config, all the existing instance of the Creeper will be removed !
+			Label: Creeper
+		}
+
+		Pickpocket: {
+			Label: Pickpocket
+			Tooltip: If you save the config, all the existing instance of the Pickpocket will be removed !
+		}
+	}
+}

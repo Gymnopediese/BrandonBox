@@ -74,10 +74,10 @@ namespace BrandonBox.NPCs.Death
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs) { // Requirements for the town NPC to spawn.
-			foreach (var player in Main.ActivePlayers) {
+			if (!ModContent.GetInstance<Systems.NPCsConfigs>().Death) return false;
+			foreach (var player in Main.ActivePlayers)
 				if (player.numberOfDeathsPVE + player.numberOfDeathsPVP >= 100)
 					return true;
-			}
 			return false;
 		}
 

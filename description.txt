@@ -1,1 +1,2 @@
-Modify this file with a description of your mod.
+A mod that add literaly INFINITE Town NPCs !!!
+More informations on my github page:  https://github.com/Gymnopediese/BrandonBox/tree/main

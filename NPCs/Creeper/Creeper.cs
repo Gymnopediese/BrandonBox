@@ -82,6 +82,7 @@ namespace BrandonBox.NPCs.Creeper
 			NPCID.Sets.AttackTime[Type] = 90; // The amount of time it takes for the NPC's attack animation to be over once it starts.
 			NPCID.Sets.AttackAverageChance[Type] = 30; // The denominator for the chance for a Town NPC to attack. Lower numbers make the Town NPC appear more aggressive.
 			NPCID.Sets.HatOffsetY[Type] = 4; // For when a party is active, the party hat spawns at a Y offset.
+			NPCID.Sets.NoTownNPCHappiness[Type] = true;
 		}
 
 		public override void SetDefaults() {
@@ -101,11 +102,8 @@ namespace BrandonBox.NPCs.Creeper
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs) { // Requirements for the town NPC to spawn.
-			foreach (var player in Main.ActivePlayers) {
-				if (CreeperAllowed.allowed)
-					return true;
-			}
-			return false;
+			if (!ModContent.GetInstance<Systems.NPCsConfigs>().Creeper) return false;
+			return (CreeperAllowed.allowed);
 		}
 
 		public override ITownNPCProfile TownNPCProfile() {

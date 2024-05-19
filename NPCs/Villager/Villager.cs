@@ -40,6 +40,7 @@ namespace BrandonBox.NPCs.Villager
 		private string _texture;
 		private string _head_texture;
 		private int _num;
+		bool spawned = false;
 		// private static List<auto> profiles = new List<Texture>().Add(ModContent.Request<Texture>("BrandonBox/NPCs/Villager/VillagerProfile1"));
 		private Profiles.StackedNPCProfile NPCProfile;
 		public override void SetStaticDefaults() {
@@ -48,7 +49,7 @@ namespace BrandonBox.NPCs.Villager
 			NPCID.Sets.AttackFrameCount[Type] = 4; // The amount of frames in the attacking animation.
 			NPCID.Sets.DangerDetectRange[Type] = 700; // The amount of pixels away from the center of the NPC that it tries to attack enemies.
 			NPCID.Sets.HatOffsetY[Type] = 4; 
-			// NPCID.Sets.TownCritter[Type] = true; 
+			NPCID.Sets.TownCritter[Type] = true; 
 			NPCID.Sets.NoTownNPCHappiness[Type] = true;
 			NPCID.Sets.ActsLikeTownNPC[Type] = true;
 			
@@ -67,56 +68,21 @@ namespace BrandonBox.NPCs.Villager
 			// NPC.Texture = ModContent.Request<Texture2D>(Texture.Replace("Villager/Villager", "Villager/Villager" + Main.rand.Next(6))).Value;
 			AnimationType = NPCID.Guide;
 			OnSpawn(null);
-		}
-
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) {
-			// We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				// Sets the preferred biomes of this town NPC listed in the bestiary.
-				// With Town NPCs, you usually set this to what biome it likes the most in regards to NPC happiness.
-				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("Hailing from a mysterious greyscale cube world, the Example Person is here to help you understand everything about tModLoader."),
-
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("Mods.ExampleMod.Bestiary.ExamplePerson")
-			});
-		}
-
-		// The PreDraw hook is useful for drawing things before our sprite is drawn or running code before the sprite is drawn
-		// Returning false will allow you to manually draw your NPC
-		public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor) {
-
-			// var texture = ModContent.Request<Texture2D>(Texture.Replace("Villager/Villager", "Villager/Villager" + Main.rand.Next(6))).Value;
-
-			// spriteBatch.Draw(texture, NPC.Center - Main.screenPosition, new Rectangle(), drawColor, NPC.rotation, new Vector2(1, 25), NPC.scale, SpriteEffects.None, 0f);
-
-
-			return true;
+			if (!ModContent.GetInstance<Systems.NPCsConfigs>().Villager)
+				NPC.active = false;
 		}
 
 		public override void OnSpawn (IEntitySource source)
 		{
+			if (spawned)
+				return;
 			_num = Main.rand.Next(SPRITE_COUNT);
 			_texture = Texture.Replace("Villager/Villager", "Villager/Villager" + _num);
 			_head_texture = HeadTexture.Replace("Villager/Villager", "Villager/Villager" + _num);
 			NPCProfile = new Profiles.StackedNPCProfile(
 				new Profiles.DefaultNPCProfile(_texture, NPCHeadLoader.GetHeadSlot(_head_texture), _texture)
 			);
-			// NPC.homeless = true;
-			if (source != null)
-				setMain();
 		}
-
-		// public override ITownNPCProfile TownNPCProfile () {
-		// 	return new Profiles.DefaultNPCProfile(_texture, NPCHeadLoader.GetHeadSlot(_head_texture), _texture);
-		// }
-
-		// public override bool CanTownNPCSpawn(int numTownNPCs) { // Requirements for the town NPC to spawn.
-		// 	return true;
-		// }
 
 		public override ITownNPCProfile TownNPCProfile() {
 			return NPCProfile;
@@ -325,39 +291,22 @@ namespace BrandonBox.NPCs.Villager
 
 		public void setMain()
 		{
-			int i;
-			for (i = 0; i < Main.npc.Length; i++)
-				if (Main.npc[i].type == this.Type)
+			int i = 0;
+			for (; i < Main.maxNPCs; i++)
+				if (Main.npc[i].type == ModContent.NPCType<Villager>())
 					break ;
-			if (i != Main.npc.Length)
-			{
-				var temp = Main.npc[i];
-				Main.npc[i] = Main.npc[Main.LocalPlayer.talkNPC];
-				Main.npc[Main.LocalPlayer.talkNPC] = temp;
-				Main.LocalPlayer.SetTalkNPC(i);
-				// Main.LocalPlayer.talkNPC = i;
-			}
+			if (i == Main.npc.Length || i == Main.LocalPlayer.talkNPC)
+				return;
+			var temp = Main.npc[i];
+			Main.npc[i] = Main.npc[Main.LocalPlayer.talkNPC];
+			Main.npc[Main.LocalPlayer.talkNPC] = temp;
+			Main.LocalPlayer.SetTalkNPC(i);
 		}
-
 		public override void Load() {
 			// Adds our Shimmer Head to the NPCHeadLoader.
 			for (int i = 0; i < SPRITE_COUNT; i++)
-			{
 				Mod.AddNPCHeadTexture(Type, Texture.Replace("Villager/Villager", "Villager/Villager" + i + "_Head"));
-			}
 		}
-
-
-		// public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-		// 	//If any player is underground and has an example item in their inventory, the example bone merchant will have a slight chance to spawn.
-		// 	if (Main.LocalPl){// && spawnInfo.Player.inventory.Any(item => item.type == ModContent.ItemType<ExampleItem>())) {
-		// 		return 1f;
-		// 	}
-		// 	//Else, the example bone merchant will not spawn if the above conditions are not met.
-		// 	return 0f;
-		// }
-
-
 		public override void LoadData(TagCompound tag) {
 			try
 			{
@@ -373,14 +322,12 @@ namespace BrandonBox.NPCs.Villager
 				OnSpawn(null);
 			}
 		}
-		
 		public override void SaveData(TagCompound tag) {
 			tag["Texture"] = _texture;
 			tag["HeadTexture"] = _head_texture;
 			tag["Num"] = _num;
 		}
-
-				public override bool CheckConditions(int left, int right, int top, int bottom) {
+		public override bool CheckConditions(int left, int right, int top, int bottom) {
 			int score = 0;
 			for (int x = left; x <= right; x++) {
 				for (int y = top; y <= bottom; y++) {
@@ -392,8 +339,5 @@ namespace BrandonBox.NPCs.Villager
 			}
 			return score >= 1;
 		}
-
-		public override bool CanGoToStatue(bool toKingStatue) => true;
-
 	}
 }

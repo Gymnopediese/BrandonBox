@@ -92,17 +92,11 @@ namespace BrandonBox.NPCs.DaughterOfSun
 		}
 
 		public override bool CanChat() {
-			// Make it so our NPC can be talked to.
 			return true;
 		}
 
 		public override void AI() {
-			// Using aiStyle 0 will make it so the NPC will always turn to face the player.
-			// If you don't want that, you can set the spriteDirection to -1 (left) or 1 (right) so they always appear to face one way.
-			// NPC.spriteDirection = 1;
 
-			// This is where we check to see if a player has clicked on our NPC.
-			// First, don't run this code if it is a multiplayer client.
 			if (Main.netMode != NetmodeID.MultiplayerClient) {
 				// Loop through every player on the server.
 				for (int i = 0; i < Main.maxPlayers; i++) {
@@ -130,6 +124,7 @@ namespace BrandonBox.NPCs.DaughterOfSun
 
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
+			if (!ModContent.GetInstance<Systems.NPCsConfigs>().DaughterOfSun) return 0f;
 			if (!TownNPCGuideWorld.rescuedTutorialTownNPC && !NPC.AnyNPCs(ModContent.NPCType<DaughterOfSunTrapped>()) && !NPC.AnyNPCs(ModContent.NPCType<DaughterOfSun>())) {
 				if (spawnInfo.SpawnTileType == TileID.Sunplate || spawnInfo.SpawnTileType == TileID.Cloud) {//&& Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY].WallType == WallID.DiscWall
 					return 1f;
@@ -138,21 +133,6 @@ namespace BrandonBox.NPCs.DaughterOfSun
 			return 0f;
 		}
 
-		// public override void HitEffect(NPC.HitInfo hit) {
-		// 	// Create gore when the NPC is killed.
-		// 	// HitEffect() is called every time the NPC takes damage.
-		// 	// We need to check that the gore is not spawned on a server and that the NPC is actually dead.
-		// 	if (Main.netMode != NetmodeID.Server && NPC.life <= 0) {
-		// 		// Spawn a piece of gore in the Gores folder with the name "TutorialTownNPC_Gore_Head".
-		// 		Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, Mod.Find<ModGore>("TutorialTownNPC_Gore_Head").Type);
-		// 		// Spawn two pieces named "TutorialTownNPC_Gore_Arm".
-		// 		Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, NPC.height / 2f), NPC.velocity, Mod.Find<ModGore>("TutorialTownNPC_Gore_Arm").Type);
-		// 		Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, NPC.height / 2f), NPC.velocity, Mod.Find<ModGore>("TutorialTownNPC_Gore_Arm").Type);
-		// 		// Spawn two pieces named "TutorialTownNPC_Gore_Leg".
-		// 		Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, NPC.height), NPC.velocity, Mod.Find<ModGore>("TutorialTownNPC_Gore_Leg").Type);
-		// 		Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, NPC.height), NPC.velocity, Mod.Find<ModGore>("TutorialTownNPC_Gore_Leg").Type);
-		// 	}
-		// }
 	}
 	// [AutoloadHead] and NPC.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
 	[AutoloadHead]
@@ -233,75 +213,11 @@ namespace BrandonBox.NPCs.DaughterOfSun
 			AnimationType = NPCID.Guide;
 		}
 
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) {
-			// We can use AddRange instead of calling Add multiple times in order to add multiple items at once
-			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				// Sets the preferred biomes of this town NPC listed in the bestiary.
-				// With Town NPCs, you usually set this to what biome it likes the most in regards to NPC happiness.
-				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-
-				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("Hailing from a mysterious greyscale cube world, the Example Person is here to help you understand everything about tModLoader."),
-
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("Mods.ExampleMod.Bestiary.ExamplePerson")
-			});
-		}
-
-		// The PreDraw hook is useful for drawing things before our sprite is drawn or running code before the sprite is drawn
-		// Returning false will allow you to manually draw your NPC
-		public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor) {
-			// This code slowly rotates the NPC in the bestiary
-			// (simply checking NPC.IsABestiaryIconDummy and incrementing NPC.Rotation won't work here as it gets overridden by drawModifiers.Rotation each tick)
-			if (NPCID.Sets.NPCBestiaryDrawOffset.TryGetValue(Type, out NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers)) {
-				drawModifiers.Rotation += 0.001f;
-
-				// Replace the existing NPCBestiaryDrawModifiers with our new one with an adjusted rotation
-				NPCID.Sets.NPCBestiaryDrawOffset.Remove(Type);
-				NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
-			}
-
-			return true;
-		}
-
-		public override void HitEffect(NPC.HitInfo hit) {
-			int num = NPC.life > 0 ? 1 : 5;
-
-			// for (int k = 0; k < num; k++) {
-			//// 	Dust.NewDust(NPC.position, NPC.width, NPC.height, ModContent.DustType<Sparkle>());
-			// }
-
-			// Create gore when the NPC is killed.
-			if (Main.netMode != NetmodeID.Server && NPC.life <= 0) {
-				// Retrieve the gore types. This NPC has shimmer and party variants for head, arm, and leg gore. (12 total gores)
-				string variant = "";
-				// if (NPC.IsShimmerVariant) variant += "_Shimmer";
-				// if (NPC.altTexture == 1) variant += "_Party";
-				int hatGore = NPC.GetPartyHatGore();
-				int headGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Head").Type;
-				int armGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Arm").Type;
-				int legGore = Mod.Find<ModGore>($"{Name}_Gore{variant}_Leg").Type;
-
-				// Spawn the gores. The positions of the arms and legs are lowered for a more natural look.
-				if (hatGore > 0) {
-					Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, hatGore);
-				}
-				Gore.NewGore(NPC.GetSource_Death(), NPC.position, NPC.velocity, headGore, 1f);
-				Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 20), NPC.velocity, armGore);
-				Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 20), NPC.velocity, armGore);
-				Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
-				Gore.NewGore(NPC.GetSource_Death(), NPC.position + new Vector2(0, 34), NPC.velocity, legGore);
-			}
-		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs) {
-		// If our Town NPC hasn't been rescued, don't arrive.
-		if (!TownNPCGuideWorld.rescuedTutorialTownNPC) {
-			return false;
+			if (!ModContent.GetInstance<Systems.NPCsConfigs>().DaughterOfSun) return false;
+			return (TownNPCGuideWorld.rescuedTutorialTownNPC);
 		}
-		return true;
-	}
 
 		// ! trop styleeee
 		// Example Person needs a house built out of ExampleMod tiles. You can delete this whole method in your townNPC for the regular house conditions.
@@ -341,18 +257,6 @@ namespace BrandonBox.NPCs.DaughterOfSun
 			};
 		}
 
-		public override void FindFrame(int frameHeight) {
-			/*npc.frame.Width = 40;
-			if (((int)Main.time / 10) % 2 == 0)
-			{
-				npc.frame.X = 40;
-			}
-			else
-			{
-				npc.frame.X = 0;
-			}*/
-		}
-
 		public override string GetChat() {
 			WeightedRandom<string> chat = new WeightedRandom<string>();
 
@@ -383,98 +287,24 @@ namespace BrandonBox.NPCs.DaughterOfSun
 			if (Main.LocalPlayer.BuyItem(500000)){
 				if (!Main.dayTime)
 				{
+					Main.dayTime = true;
+					Main.time = 0;
 					Main.NewText("You bought some sunshine!");
-					Main.SkipToTime(4500, true);
+					// Main.SkipToTime(0, true);
 				}
 				else
 				{
+					Main.dayTime = false;
+					Main.time = 0;
 					Main.NewText("You bought some darkness!");
-					Main.SkipToTime(19500, false);
+					// Main.SkipToTime(19500, false);
 				}
 			}
 			// els
 		}
 
-		// Not completely finished, but below is what the NPC will sell
-		public override void AddShops() {
-			var npcShop = new NPCShop(Type, ShopName)
-				.Add(42);
-				//.Add<EquipMaterial>()
-				//.Add<BossItem>()
-				// .Add(new Item(ModContent.ItemType<Items.Placeable.Furniture.ExampleWorkbench>()) { shopCustomPrice = Item.buyPrice(copper: 15) }) // This example sets a custom price, ExampleNPCShop.cs has more info on custom prices and currency. 
-				// .Add<Items.Placeable.Furniture.ExampleChair>()
-				// .Add<Items.Placeable.Furniture.ExampleDoor>()
-				// .Add<Items.Placeable.Furniture.ExampleBed>()
-				// .Add<Items.Placeable.Furniture.ExampleChest>()
-				// .Add<Items.Tools.ExamplePickaxe>()
-				// .Add<Items.Tools.ExampleHamaxe>()
-				// .Add<Items.Consumables.ExampleHealingPotion>(new Condition("Mods.ExampleMod.Conditions.PlayerHasLifeforceBuff", () => Main.LocalPlayer.HasBuff(BuffID.Lifeforce)))
-				// .Add<Items.Weapons.ExampleSword>(Condition.MoonPhasesQuarter0)
-				//.Add<ExampleGun>(Condition.MoonPhasesQuarter1)
-				// .Add<Items.Ammo.ExampleBullet>(Condition.MoonPhasesQuarter1)
-				// .Add<Items.Weapons.ExampleStaff>(ExampleConditions.DownedMinionBoss)
-				// .Add<ExampleOnBuyItem>()
-				// .Add<Items.Weapons.ExampleYoyo>(Condition.IsNpcShimmered); // Let's sell an yoyo if this NPC is shimmered!
+		public override bool CanGoToStatue(bool toKingStatue) => false;
 
-			// if (ModContent.GetInstance<ExampleModConfig>().ExampleWingsToggle) {
-			// 	npcShop.Add<ExampleWings>(ExampleConditions.InExampleBiome);
-			// }
-
-			// if (ModContent.TryFind("SummonersAssociation/BloodTalisman", out ModItem bloodTalisman)) {
-			// 	npcShop.Add(bloodTalisman.Type);
-			// }
-			npcShop.Register(); // Name of this shop tab
-		}
-
-		public override void ModifyActiveShop(string shopName, Item[] items) {
-			foreach (Item item in items) {
-				// Skip 'air' items and null items.
-				if (item == null || item.type == ItemID.None) {
-					continue;
-				}
-
-				// If NPC is shimmered then reduce all prices by 50%.
-				// if (NPC.IsShimmerVariant) {
-				// 	int value = item.shopCustomPrice ?? item.value;
-				// 	item.shopCustomPrice = value / 2;
-				// }
-			}
-		}
-
-		// public override void ModifyNPCLoot(NPCLoot npcLoot) {
-		// 	npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ExampleCostume>()));
-		// }
-
-		// Make this Town NPC teleport to the King and/or Queen statue when triggered. Return toKingStatue for only King Statues. Return !toKingStatue for only Queen Statues. Return true for both.
-		public override bool CanGoToStatue(bool toKingStatue) => true;
-
-		// Make something happen when the npc teleports to a statue. Since this method only runs server side, any visual effects like dusts or gores have to be synced across all clients manually.
-		public override void OnGoToStatue(bool toKingStatue) {
-			if (Main.netMode == NetmodeID.Server) {
-				ModPacket packet = Mod.GetPacket();
-				// packet.Write((byte)ExampleMod.MessageType.ExampleTeleportToStatue);
-				packet.Write((byte)NPC.whoAmI);
-				packet.Send();
-			}
-			else {
-				StatueTeleport();
-			}
-		}
-
-		// Create a square of pixels around the NPC on teleport.
-		public void StatueTeleport() {
-			for (int i = 0; i < 30; i++) {
-				Vector2 position = Main.rand.NextVector2Square(-20, 21);
-				if (Math.Abs(position.X) > Math.Abs(position.Y)) {
-					position.X = Math.Sign(position.X) * 20;
-				}
-				else {
-					position.Y = Math.Sign(position.Y) * 20;
-				}
-
-				// Dust.NewDustPerfect(NPC.Center + position, ModContent.DustType<Sparkle>(), Vector2.Zero).noGravity = true;
-			}
-		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback) {
 			damage = 20;
@@ -497,22 +327,5 @@ namespace BrandonBox.NPCs.DaughterOfSun
 			// SparklingBall is not affected by gravity, so gravityCorrection is left alone.
 		}
 
-		// Let the NPC "talk about" minion boss
-		// public override int? PickEmote(Player closestPlayer, List<int> emoteList, WorldUIAnchor otherAnchor) {
-		// 	// By default this NPC will have a chance to use the Minion Boss Emote even if Minion Boss is not downed yet
-		// 	int type = ModContent.EmoteBubbleType<MinionBossEmote>();
-		// 	// If the NPC is talking to the Demolitionist, it will be more likely to react with angry emote
-		// 	if (otherAnchor.entity is NPC { type: NPCID.Demolitionist }) {
-		// 		type = EmoteID.EmotionAnger;
-		// 	}
-
-		// 	// Make the selection more likely by adding it to the list multiple times
-		// 	for (int i = 0; i < 4; i++) {
-		// 		emoteList.Add(type);
-		// 	}
-
-		// 	// Use this or return null if you don't want to override the emote selection totally
-		// 	return base.PickEmote(closestPlayer, emoteList, otherAnchor);
-		// }
 	}
 }
