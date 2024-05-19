@@ -175,17 +175,26 @@ namespace BrandonBox.NPCs.Pickpocket
 		public override string GetChat() {
 			WeightedRandom<string> chat = new WeightedRandom<string>();
 
-			chat.Add("Oh, these? Handmade, of course!");
-			chat.Add("I don't know where you heard that... these are all crafted by me!");
-			chat.Add("Such a bargain, right? Took me ages to make!");
-			chat.Add("Why would I steal? I'm just a humble artisan!");
-			chat.Add("Every stitch and thread, my own work!");
-			chat.Add("How could you think these are stolen? They're my pride and joy!");
-			chat.Add("You're getting an incredible deal, but it's hard for me too!");
-			chat.Add("Don't listen to rumors, my items are 100% authentic!");
-			chat.Add("Trust me, these took forever to create!");
-			chat.Add("It's tough to sell them this cheap, but I want to share my work!");
-
+			if (PickpocketAllowed.itemsIDs.Count != 0)
+			{
+				chat.Add("I've got some great deals for you today!");
+				chat.Add("Oh, these? Handmade, of course!");
+				chat.Add("I don't know where you heard that... these are all crafted by me!");
+				chat.Add("Such a bargain, right? Took me ages to make!");
+				chat.Add("Why would I steal? I'm just a humble artisan!");
+				chat.Add("Every stitch and thread, my own work!");
+				chat.Add("How could you think these are stolen? They're my pride and joy!");
+				chat.Add("You're getting an incredible deal, but it's hard for me too!");
+				chat.Add("Don't listen to rumors, my items are 100% authentic!");
+				chat.Add("Trust me, these took forever to create!");
+				chat.Add("It's tough to sell them this cheap, but I want to share my work!");
+			}
+			else 
+			{
+				chat.Add("I'm all out of stock for today, come back tomorrow!");
+				chat.Add("I've sold out for today, but I'll have more tomorrow!");
+				chat.Add("Everyday's I have new items, come back tomorrow!");
+			}
 			string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
 
 
@@ -195,8 +204,6 @@ namespace BrandonBox.NPCs.Pickpocket
 		public override void SetChatButtons(ref string button, ref string button2) { // What the chat buttons are when you open up the chat UI
 			if (PickpocketAllowed.itemsIDs.Count != 0)
 				button = Language.GetTextValue("LegacyInterface.28");
-			else
-				button = "Come back tomorrow!";
 		}
 
 		public override void OnChatButtonClicked(bool firstButton, ref string shop) {
