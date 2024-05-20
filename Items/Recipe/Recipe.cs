@@ -49,6 +49,18 @@ namespace BrandonBox.Items.Recipe
 		{
 			return new Condition("item " + name + " learned", () => learnedRecipes.Contains(name));
 		}
+
+
+		public static Condition notLearned(string name)
+		{
+			return new Condition("item " + name + " not learned", () => !learnedRecipes.Contains(name));
+		}
+
+		public static Condition notLearnedHardmode(string name)
+		{
+			return new Condition("item " + name + " not learned", () => !learnedRecipes.Contains(name) && Main.hardMode);
+		}
+
 		public override void SaveWorldData(TagCompound tag) {
 			for (int i = 0; i < learnedRecipes.Count; i++) {
 				tag["learnedRecipe" + i] = learnedRecipes[i];

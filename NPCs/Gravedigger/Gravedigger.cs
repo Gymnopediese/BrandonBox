@@ -156,11 +156,9 @@ namespace BrandonBox.NPCs.Gravedigger
 			return chosenChat;
 		}
 
-		public override void SetChatButtons(ref string button, ref string button2) { // What the chat buttons are when you open up the chat UI
-			button = "Zombie Cure (10 gold)";
-
+		public static string MoneyToText(int ttax)
+		{
 			string tax = "";
-			int ttax = GravediggerTaxCollection.Taxes;
 			if (ttax % 100 != 0)
 				tax = ttax % 100 + " copper";
 			ttax /= 100;
@@ -172,6 +170,14 @@ namespace BrandonBox.NPCs.Gravedigger
 			ttax /= 100;
 			if (ttax % 100 != 0)
 				tax = ttax % 100 + " platinum " + tax;
+			return tax;
+		}
+
+		public override void SetChatButtons(ref string button, ref string button2) { // What the chat buttons are when you open up the chat UI
+			button = "Zombie Cure (10 gold)";
+
+			string tax = MoneyToText(GravediggerTaxCollection.Taxes);
+			
 			if (GravediggerTaxCollection.Taxes == 0)
 				button2 = "No Taxes";
 			else

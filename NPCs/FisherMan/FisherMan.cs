@@ -194,14 +194,9 @@ namespace BrandonBox.NPCs.FisherMan
 				.Add(ItemID.SuperAbsorbantSponge)
 				.Add(ItemID.GoldenBugNet)
 				.Add(ItemID.FishHook)
-				.Add(ItemID.FishMinecart);
-
-			if (Main.hardMode) {
-				npcShop
-				.Add(ItemID.HotlineFishingHook)
-				.Add(ItemID.FinWings);
-
-			}
+				.Add(ItemID.FishMinecart)
+				.Add(ItemID.HotlineFishingHook, MyConditions.hardmode)
+				.Add(ItemID.FinWings, MyConditions.hardmode);
 			npcShop.Register(); // Name of this shop tab
 		}
 

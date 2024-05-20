@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "9dBVb3La3sKVeFqrIXMQPBc/3Qup1UiXFZsWRHEYhJ1N4MKp6pPfpgj5YAsp48p7V9NmrsR7aquyaDGOcyEOOg==",
+  "success": true,
+  "projectFilePath": "/Users/albaud/Library/Application Support/Terraria/tModLoader/ModSources/BrandonBox/BrandonBox.csproj",
+  "expectedPackageFiles": [
+    "/Users/albaud/.nuget/packages/tmodloader.codeassist/0.1.5/tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

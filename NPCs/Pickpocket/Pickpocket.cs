@@ -32,7 +32,7 @@ namespace BrandonBox.NPCs.Pickpocket
 					continue;
 				PickpocketAllowed.itemsIDs.Remove(item.type);
 				shopInventory[i] = new Item();
-				item.value /= 5;
+				item.value *= 4 / 5;
 				return;
 			}
 		}

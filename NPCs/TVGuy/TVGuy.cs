@@ -248,13 +248,11 @@ namespace BrandonBox.NPCs.TVGuy
 			var npcShop = new NPCShop(Type, ShopName);
 				// .Add<TVRemote>();
 
-			npcShop.Add(new Item(ModContent.ItemType<Items.WallCamera.WallCameraRecipe>()) { buyOnce = true }, new Condition("", () => !Items.Recipe.RecipeLearner.learnedRecipes.Contains("WallCamera")));
+			npcShop.Add(new Item(ModContent.ItemType<Items.WallCamera.WallCameraRecipe>()) { buyOnce = true }, Items.Recipe.RecipeLearner.notLearned("WallCamera"));
 			// npcShop.Add(new ModContent.ItemType<Items.WallCamera.WallCameraRecipe>() { buyOnce = true }, new Condition("", () => !Items.Recipe.RecipeLearner.learnedRecipes.Contains("WallCamera")));
-			npcShop.Add(new Item(ModContent.ItemType<Items.LensCamera.LensCameraRecipe>()) { buyOnce = true }, new Condition("", () => !Items.Recipe.RecipeLearner.learnedRecipes.Contains("LensCamera")));
+			npcShop.Add(new Item(ModContent.ItemType<Items.LensCamera.LensCameraRecipe>()) { buyOnce = true }, Items.Recipe.RecipeLearner.notLearned("LensCamera"));
 
-			if (Main.hardMode) {
-				npcShop.Add(new Item(ModContent.ItemType<Items.EyeCamera.EyeCamera>()) { buyOnce = true }, new Condition("", () => !Items.Recipe.RecipeLearner.learnedRecipes.Contains("EyeCamera")));
-			}
+			npcShop.Add(new Item(ModContent.ItemType<Items.EyeCamera.EyeCamera>()) { buyOnce = true }, Items.Recipe.RecipeLearner.notLearnedHardmode("EyeCamera"));
 			npcShop.Register(); // Name of this shop tab
 		}
 

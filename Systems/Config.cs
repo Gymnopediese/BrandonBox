@@ -96,6 +96,11 @@ namespace BrandonBox.Systems
 		[DefaultValue(true)]
 		public bool Ronin;
 
+
+		[Tooltip("If you save the config, all the existing instance of the Traveler will be removed !")]
+		[DefaultValue(true)]
+		public bool Traveler;
+
 		[Tooltip("If you save the config, all the existing instance of the TVGuy will be removed !")]
 		[DefaultValue(true)]
 		public bool TVGuy;
@@ -118,7 +123,9 @@ namespace BrandonBox.Systems
 			npcs[ModContent.NPCType<NPCs.Poacher.Poacher>()] = Poacher;
 			npcs[ModContent.NPCType<NPCs.RainMan.RainMan>()] = RainMan;
 			npcs[ModContent.NPCType<NPCs.Ronin.Ronin>()] = Ronin;
+			npcs[ModContent.NPCType<NPCs.Traveler.Traveler>()] = Traveler;
 			npcs[ModContent.NPCType<NPCs.TVGuy.TVGuy>()] = TVGuy;
+
 			npcs[ModContent.NPCType<NPCs.Villager.Villager>()] = Villager;
 			foreach (var npcid in npcs)
 			{

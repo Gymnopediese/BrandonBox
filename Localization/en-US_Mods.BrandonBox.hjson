@@ -304,6 +304,8 @@ NPCs: {
 			Princess_LovesNPC: I like {NPCName}.
 		}
 	}
+
+	Traveler.DisplayName: Traveler
 }
 
 Items: {
@@ -522,6 +524,11 @@ Configs: {
 		Pickpocket: {
 			Label: Pickpocket
 			Tooltip: If you save the config, all the existing instance of the Pickpocket will be removed !
+		}
+
+		Traveler: {
+			Tooltip: If you save the config, all the existing instance of the Traveler will be removed !
+			Label: Traveler
 		}
 	}
 }
