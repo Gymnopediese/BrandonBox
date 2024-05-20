@@ -65,6 +65,21 @@ You have mined meteorite, he will then be interested in this material coming fro
 
 His house must be isolated from any other NPCs, he can't trust anyone...
 
+### The Pickpocket
+
+![Pickpocket](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Pickpocket/Pickpocket_Head.png)
+
+Disguised as a charming panda, or maybe she is a panda ?, she has a talent for "acquiring" items from other NPCs and selling them at a bargain. She always insists that her goods are handmade and genuinely unique, concocting elaborate stories to cover up any accusations of thievery. Despite her suspicious origins, her prices are unbeatable, making her a favorite among frugal adventurers. Can you trust her? Well, her prices are hard to resist!
+
+#### Spawn conditions
+
+Spawn after the player stole an item from an NPC like the red Hat of the Clothier.
+
+### Specificities
+
+Every day, she sells new item she has "found" the previous day. The maximum amount of item she sell will depend on the amount of npc you have. it varies between 1 and 10, ten being at the end of hardmod(no mod).
+
+
 ### The Daughter of the Sun
 
 ![Daughter of the Sun](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/DaughterOfSun/DaughterOfSun_Head.png)
