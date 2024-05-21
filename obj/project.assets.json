@@ -31,24 +31,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/albaud/.nuget/packages/": {}
+    "C:\\Users\\Dylan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/albaud/Library/Application Support/Terraria/tModLoader/ModSources/BrandonBox/BrandonBox.csproj",
+      "projectUniqueName": "C:\\Users\\Dylan\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\BrandonBox\\BrandonBox.csproj",
       "projectName": "BrandonBox",
-      "projectPath": "/Users/albaud/Library/Application Support/Terraria/tModLoader/ModSources/BrandonBox/BrandonBox.csproj",
-      "packagesPath": "/Users/albaud/.nuget/packages/",
-      "outputPath": "/Users/albaud/Library/Application Support/Terraria/tModLoader/ModSources/BrandonBox/obj/",
+      "projectPath": "C:\\Users\\Dylan\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\BrandonBox\\BrandonBox.csproj",
+      "packagesPath": "C:\\Users\\Dylan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dylan\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\BrandonBox\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/albaud/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Dylan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -93,7 +95,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

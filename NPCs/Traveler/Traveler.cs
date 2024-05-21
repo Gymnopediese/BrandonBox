@@ -67,15 +67,24 @@ namespace BrandonBox.NPCs.Traveler
 		private Profiles.StackedNPCProfile NPCProfile;
 
 
-		public override void LoadData(TagCompound tag) {
-			crimson = tag.GetBool("crimson");
+		public void setSkin(bool crimson)
+		{
 			if (crimson)
+			{
+				NPCProfile = new Profiles.StackedNPCProfile(
+				new Profiles.DefaultNPCProfile(Texture, NPCHeadLoader.GetHeadSlot(HeadTexture), Texture)
+				);
 				return;
+			}
 			var _head_texture = HeadTexture.Replace("Traveler/Traveler", "Traveler/TravelerCrimson"); 
 			var _texture = Texture.Replace("Traveler/Traveler", "Traveler/TravelerCrimson"); 
 			NPCProfile = new Profiles.StackedNPCProfile(
 				new Profiles.DefaultNPCProfile(_texture, NPCHeadLoader.GetHeadSlot(_head_texture), _texture)
 			);
+		}
+		public override void LoadData(TagCompound tag) {
+			crimson = tag.GetBool("crimson");
+			setSkin(crimson);
 		}
 
 		public override void SaveData(TagCompound tag) {
@@ -84,13 +93,7 @@ namespace BrandonBox.NPCs.Traveler
 
 		public override void OnSpawn(IEntitySource source) {
 			crimson = WorldGen.crimson;
-			if (crimson)
-				return;
-			var _head_texture = HeadTexture.Replace("Traveler/Traveler", "Traveler/TravelerCrimson"); 
-			var _texture = Texture.Replace("Traveler/Traveler", "Traveler/TravelerCrimson"); 
-			NPCProfile = new Profiles.StackedNPCProfile(
-				new Profiles.DefaultNPCProfile(_texture, NPCHeadLoader.GetHeadSlot(_head_texture), _texture)
-			);
+			setSkin(crimson);
 		}
 
 		public override void SetStaticDefaults() {
@@ -135,6 +138,13 @@ namespace BrandonBox.NPCs.Traveler
 				ItemID.CrimsonRod,
 				ItemID.TheRottedFork,
 
+				ItemID.BloodWater,
+				ItemID.DartPistol,
+				ItemID.TendonHook,
+				ItemID.FetidBaghnakhs,
+				ItemID.SoulDrain,
+				ItemID.FleshKnuckles,
+
 				ItemID.Ichor,
 				ItemID.RedSolution,
 				ItemID.CrimsonKey,
@@ -150,8 +160,15 @@ namespace BrandonBox.NPCs.Traveler
 				ItemID.Vilethorn,
 				ItemID.BallOHurt,
 
+				ItemID.UnholyWater,
+				ItemID.DartRifle,
+				ItemID.WormHook,
+				ItemID.ChainGuillotines,
+				ItemID.ClingerStaff,
+				ItemID.PutridScent,
 				ItemID.CursedFlame,
 				ItemID.PurpleSolution,
+
 				ItemID.CorruptionKey,
 		};
 
@@ -164,6 +181,13 @@ namespace BrandonBox.NPCs.Traveler
 			Item.buyPrice(0, 2, 0, 0),
 			Item.buyPrice(0, 2, 0, 0),
 			Item.buyPrice(0, 2, 0, 0),
+
+			Item.buyPrice(0, 1,  0, 0),
+			Item.buyPrice(0, 15, 0, 0),
+			Item.buyPrice(0, 15, 0, 0),
+			Item.buyPrice(0, 15, 0, 0),
+			Item.buyPrice(0, 15, 0, 0),
+			Item.buyPrice(0, 15, 0, 0),
 
 			Item.buyPrice(0, 0, 50, 0),
 			Item.buyPrice(0, 0, 15, 0),
@@ -278,19 +302,21 @@ namespace BrandonBox.NPCs.Traveler
 
 			var shop = new NPCShop(Type, ShopName);
 
-			for (int i = 0; i < idsco.Count - 3; i++)
+			for (int i = 0; i < 7; i++)
+			{
 				shop.Add(new Item(idsco[i]) { shopSpecialCurrency = itemsMoneyIDs[i], shopCustomPrice = 1}, MyConditions.crimpson);
-			for (int i = 0; i < idsca.Count - 3; i++)
 				shop.Add(new Item(idsca[i]) { shopSpecialCurrency = itemsMoneyIDs[idsca.Count + i], shopCustomPrice = 1}, MyConditions.corruption);
+			}
+
+			for (int i = 7; i < 8 + 5; i++)
+			{
+				shop.Add(new Item(idsco[i]) { shopSpecialCurrency = itemsMoneyIDs[i], shopCustomPrice = 1}, MyConditions.crimpsonHardmode);
+				shop.Add(new Item(idsca[i]) { shopSpecialCurrency = itemsMoneyIDs[idsca.Count + i], shopCustomPrice = 1}, MyConditions.corruptionHardmode);
+			}
 
 
-			shop.Add(new Item(idsco[idsco.Count - 3]) { shopSpecialCurrency = itemsMoneyIDs[idsco.Count - 3], shopCustomPrice = 1}, MyConditions.crimpsonHardmode);
-			shop.Add(new Item(idsco[idsco.Count - 2]) { shopSpecialCurrency = itemsMoneyIDs[idsco.Count - 2], shopCustomPrice = 1}, MyConditions.crimpsonHardmode);
-			shop.Add(new Item(ItemID.ScourgeoftheCorruptor) { shopSpecialCurrency = itemsMoneyIDs[idsco.Count - 1], shopCustomPrice = 1}, MyConditions.crimpsonHardmode);
-
-			shop.Add(new Item(idsca[idsca.Count - 3]) { shopSpecialCurrency = itemsMoneyIDs[2 * idsca.Count - 3], shopCustomPrice = 1}, MyConditions.corruptionHardmode);
-			shop.Add(new Item(idsca[idsca.Count - 2]) { shopSpecialCurrency = itemsMoneyIDs[2 * idsca.Count - 2], shopCustomPrice = 1}, MyConditions.corruptionHardmode);
-			shop.Add(new Item(ItemID.VampireKnives) { shopSpecialCurrency = itemsMoneyIDs[2 * idsca.Count - 1], shopCustomPrice = 1}, MyConditions.corruptionHardmode);
+			shop.Add(new Item(ItemID.ScourgeoftheCorruptor) { shopSpecialCurrency = itemsMoneyIDs[idsco.Count - 1], shopCustomPrice = 1}, MyConditions.planteraCrimson);
+			shop.Add(new Item(ItemID.VampireKnives) { shopSpecialCurrency = itemsMoneyIDs[2 * idsca.Count - 1], shopCustomPrice = 1}, MyConditions.planteraCorruption);
 			shop.Register();
 			
 		}
