@@ -375,6 +375,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Lens Camera Recipe
 	}
+
+	InfiniteSandBucket: {
+		Tooltip: ""
+		DisplayName: Infinite Sand Bucket
+	}
 }
 
 Tiles.SafeZoneCertificat.MapEntry: Safe Zone Certificat

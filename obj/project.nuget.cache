@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9dBVb3La3sKVeFqrIXMQPBc/3Qup1UiXFZsWRHEYhJ1N4MKp6pPfpgj5YAsp48p7V9NmrsR7aquyaDGOcyEOOg==",
+  "dgSpecHash": "DQXwHs3grQk+6t6A09QRANq10y51ad72OBpfrMDcOAG971+PvUuGzfm0jg3A4RQIoobu1yzt/TxxSxGp/K0z1g==",
   "success": true,
-  "projectFilePath": "/Users/albaud/Library/Application Support/Terraria/tModLoader/ModSources/BrandonBox/BrandonBox.csproj",
+  "projectFilePath": "C:\\Users\\Dylan\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\BrandonBox\\BrandonBox.csproj",
   "expectedPackageFiles": [
-    "/Users/albaud/.nuget/packages/tmodloader.codeassist/0.1.5/tmodloader.codeassist.0.1.5.nupkg.sha512"
+    "C:\\Users\\Dylan\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
   ],
   "logs": []
 }

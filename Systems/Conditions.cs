@@ -11,5 +11,7 @@ namespace BrandonBox
 		public static Condition crimpson = new Condition("is hardmode", () => WorldGen.crimson);
 		public static Condition corruptionHardmode = new Condition("is hardmode", () => Main.hardMode && !WorldGen.crimson);
 		public static Condition crimpsonHardmode = new Condition("is hardmode", () => Main.hardMode && WorldGen.crimson);
+		public static Condition planteraCrimson = new Condition("is hardmode", () => WorldGen.crimson && NPC.downedPlantBoss);
+		public static Condition planteraCorruption = new Condition("is hardmode", () => !WorldGen.crimson && NPC.downedPlantBoss);
 	}
 }

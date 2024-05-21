@@ -1,4 +1,6 @@
-BrandonBox is a mod that add literaly INFINITE Town NPCs, here is a list:
+Wiki Now Available !!! : https://terrariamods.wiki.gg/wiki/BrandonBox2
+
+BrandonBox is an open source mod that add literaly INFINITE Town NPCs, here is a not INFINITE list:
 [list]
     [*] 🪦 Gravedigger
 	[*] 🏠 Villagers or the INFINITE NPC
@@ -14,4 +16,4 @@ BrandonBox is a mod that add literaly INFINITE Town NPCs, here is a list:
 	[*] 🥷 Ronin
 	[*] 🐼 Poacher
 [/list]
-More informations on my github page:  https://github.com/Gymnopediese/BrandonBox/tree/main
+github page:  https://github.com/Gymnopediese/BrandonBox/tree/main
