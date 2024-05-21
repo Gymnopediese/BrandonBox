@@ -53,9 +53,10 @@ def main():
 		# exit(1)
 		except:
 			pass
-
-	
-	sprite_sheet_to_gif("NPCs/DaughterOfSun/DaughterOfSun.png", 50, 60, "NPCs/DaughterOfSun/DaughterOfSun.gif")
+	sprite_sheet_to_gif("NPCs/DaughterOfSun/DaughterOfSun.png", 50, 66, "NPCs/DaughterOfSun/DaughterOfSun.gif")
+ 
+	for i in range(20):
+		sprite_sheet_to_gif(f"NPCs/Villager/Villager{i}.png", 44, 54, f"NPCs/Villager/Villager{i}.gif")
 	
 
 main()
