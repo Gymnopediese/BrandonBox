@@ -4,6 +4,7 @@ BrandonBox is a mod that add literaly INFINITE Town NPCs, here is a list:
 	[*] 🏠 Villagers or the INFINITE NPC
 	[*] 📺 TVGuy
 	[*] 🛍️ Pickpocket
+	[*] 🧳 Traveler
 	[*] 🌞 Daughter of the Sun
 	[*] 🎣 FisherMan
 	[*] 💣 Creeper

@@ -166,6 +166,7 @@ namespace BrandonBox.NPCs.Traveler
 			Item.buyPrice(0, 2, 0, 0),
 
 			Item.buyPrice(0, 0, 50, 0),
+			Item.buyPrice(0, 0, 15, 0),
 			Item.buyPrice(1, 50, 0, 0),
 		};
 
@@ -213,18 +214,48 @@ namespace BrandonBox.NPCs.Traveler
 		}
 
 		public override List<string> SetNPCNameList() {
-			return new List<string>(){
+			if (crimson)
+				return new List<string>(){
+					"Ezra",
+					"Liora",
+					"Selene",
+					"Elara",
+					"Kael",
+				};
 
-				"name"
-			};
+			return new List<string>(){
+			"Thorne",
+			"Jasper",
+			"Tamsin",
+			"Ronan",
+			"Caius"
+		};
 		}
 
 		public override string GetChat() {
 			WeightedRandom<string> chat = new WeightedRandom<string>();
 
 
-			chat.Add("hello there", 1.0);
-
+			chat.Add("Wonders from afar, eager for a trade?");
+			chat.Add("Greetings, adventurer! Care to see what treasures I've brought?");
+			chat.Add("Exotic goods for your local finds. Let's barter!");
+			chat.Add("I've traveled long and far, what unique items do you have?");
+			chat.Add("New lands, new items. Fancy a trade?");
+			chat.Add("Trade with me, and you'll see wonders from distant realms.");
+			chat.Add("Fresh from lands unknown, ready to exchange?");
+			chat.Add("Your world is full of curiosities! Show me what you have.");
+			chat.Add("I bring rare treasures from beyond the horizon.");
+			chat.Add("Let's make a deal! My goods are unlike any you've seen.");
+			if (crimson)
+			{
+				chat.Add("This red hue is quite the sight, isn't it?");
+				chat.Add("The corruption is a dangerous place, but it has its own beauty.");
+			}
+			else
+			{
+				chat.Add("The crimson is a dangerous place, but it has its own beauty.");
+				chat.Add("This purple hue is quite the sight, isn't it?");
+			}
 			string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
 
 
