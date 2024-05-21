@@ -79,11 +79,20 @@ Spawn after the player stole an item from an NPC like the red Hat of the Clothie
 
 Every day, she sells new item she has "found" the previous day. The maximum amount of item she sell will depend on the amount of npc you have. it varies between 1 and 10, ten being at the end of hardmod(no mod).
 
+### The Traveller
+
+![Pickpocket](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Traveler/Traveler_Head.png)
+![Pickpocket](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/Traveler/TravelerCrimson_Head.png)
+
+The Traveller has journeyed from distant lands to bring you exotic items unavailable in your world. Trade with him to acquire rare treasures and curiosities, all in exchange for items unfamiliar to his homeland. Discover a unique array of goods and expand your collection with the wonders he offers.
+
+#### Spawn conditions
+
+If either the Eater of Worlds OR the Brain of Cthulhu have been defeated.
 
 ### The Daughter of the Sun
 
 ![Daughter of the Sun](https://raw.githubusercontent.com/Gymnopediese/BrandonBox/main/NPCs/DaughterOfSun/DaughterOfSun_Head.png)
-
 
 Held captive by harpies, the Daughter of the Sun needs your help to reclaim her freedom. She will then make a contract with you: Offer her some gold, and she'll convince her father to rise earlier in the day!
 
