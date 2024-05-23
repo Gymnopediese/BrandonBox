@@ -1,14 +1,7 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.ItemDropRules;
-using Terraria.GameContent.Personalities;
 using Terraria.GameContent.UI;
 using Terraria.ID;
 using Terraria.Localization;
@@ -21,41 +14,41 @@ namespace BrandonBox.NPCs.Traveler
 {
 
 	public class VanillaItemAsCurrency : CustomCurrencySingleCoin
-{
-	public VanillaItemAsCurrency VanillaItemAsCurrencySystem; // Set in the mod class
-	public int VanillaItemAsCurrencyID; // Set in the mod class
-
-	public int Value; // Set in the mod class
-
-	public VanillaItemAsCurrency(int coinItemID, long currencyCap, string CurrencyTextKey, int Value) : base(coinItemID, currencyCap)
 	{
-		this.CurrencyTextKey = CurrencyTextKey; // The name of the currency as a localization key.
-		CurrencyTextColor = Color.LightBlue; // The color that the price line will be.
-		CurrencyDrawScale = 1f; 
-		this.Value = Value;
-	}
+		public VanillaItemAsCurrency VanillaItemAsCurrencySystem; // Set in the mod class
+		public int VanillaItemAsCurrencyID; // Set in the mod class
 
-	public override bool TryPurchasing(	long 	price,
-										List< Item[]> 	inv,
-										List< Point > 	slotCoins,
-										List< Point > 	slotsEmpty,
-										List< Point > 	slotEmptyBank,
-										List< Point > 	slotEmptyBank2,
-										List< Point > 	slotEmptyBank3,
-										List< Point > 	slotEmptyBank4 
-										)	
-	{
-		return Main.LocalPlayer.BuyItem(Value) && base.TryPurchasing(price, inv, slotCoins, slotsEmpty, slotEmptyBank, slotEmptyBank2, slotEmptyBank3, slotEmptyBank);
-	}
+		public int Value; // Set in the mod class
 
-	public override void GetPriceText(string[] lines, ref int currentLine, long price)
-	{
-		Color lineColor = CurrencyTextColor * (Main.mouseTextColor / 255f);
-		lines[currentLine++] = $"[c/{lineColor.R:X2}{lineColor.G:X2}{lineColor.B:X2}:{Lang.tip[50].Value} {price} {Language.GetTextValue(CurrencyTextKey)}]";
-		lines[currentLine++] = $"[c/{lineColor.R:X2}{lineColor.G:X2}{lineColor.B:X2}: + {NPCs.Gravedigger.Gravedigger.MoneyToText(Value)} ]";
-	}
+		public VanillaItemAsCurrency(int coinItemID, long currencyCap, string CurrencyTextKey, int Value) : base(coinItemID, currencyCap)
+		{
+			this.CurrencyTextKey = CurrencyTextKey; // The name of the currency as a localization key.
+			CurrencyTextColor = Color.LightBlue; // The color that the price line will be.
+			CurrencyDrawScale = 1f; 
+			this.Value = Value;
+		}
 
-}
+		public override bool TryPurchasing(	long 	price,
+											List< Item[]> 	inv,
+											List< Point > 	slotCoins,
+											List< Point > 	slotsEmpty,
+											List< Point > 	slotEmptyBank,
+											List< Point > 	slotEmptyBank2,
+											List< Point > 	slotEmptyBank3,
+											List< Point > 	slotEmptyBank4 
+											)	
+		{
+			return Main.LocalPlayer.BuyItem(Value) && base.TryPurchasing(price, inv, slotCoins, slotsEmpty, slotEmptyBank, slotEmptyBank2, slotEmptyBank3, slotEmptyBank);
+		}
+
+		public override void GetPriceText(string[] lines, ref int currentLine, long price)
+		{
+			Color lineColor = CurrencyTextColor * (Main.mouseTextColor / 255f);
+			lines[currentLine++] = $"[c/{lineColor.R:X2}{lineColor.G:X2}{lineColor.B:X2}:{Lang.tip[50].Value} {price} {Language.GetTextValue(CurrencyTextKey)}]";
+			lines[currentLine++] = $"[c/{lineColor.R:X2}{lineColor.G:X2}{lineColor.B:X2}: + {NPCs.Gravedigger.Gravedigger.MoneyToText(Value)} ]";
+		}
+
+	}
 
 	[AutoloadHead]
 	public class Traveler : ModNPC
@@ -128,7 +121,7 @@ namespace BrandonBox.NPCs.Traveler
 		}
 
 
-		List<int> idsca = new List<int>() {
+		List<int> idsca = [
 				ItemID.Vertebrae,
 				ItemID.ViciousMushroom,
 
@@ -148,9 +141,9 @@ namespace BrandonBox.NPCs.Traveler
 				ItemID.Ichor,
 				ItemID.RedSolution,
 				ItemID.CrimsonKey,
-			};
+			];
 
-		List<int> idsco = new List<int>() {
+		List<int> idsco = [
 				ItemID.RottenChunk,
 				ItemID.VileMushroom,
 				
@@ -166,13 +159,14 @@ namespace BrandonBox.NPCs.Traveler
 				ItemID.ChainGuillotines,
 				ItemID.ClingerStaff,
 				ItemID.PutridScent,
+				
 				ItemID.CursedFlame,
 				ItemID.PurpleSolution,
 
 				ItemID.CorruptionKey,
-		};
+		];
 
-		List<int> prices = new List<int>() {
+		List<int> prices = [
 			Item.buyPrice(0, 1, 0, 0),
 			Item.buyPrice(0, 0, 5, 0),
 
@@ -192,38 +186,37 @@ namespace BrandonBox.NPCs.Traveler
 			Item.buyPrice(0, 0, 50, 0),
 			Item.buyPrice(0, 0, 15, 0),
 			Item.buyPrice(1, 50, 0, 0),
-		};
+		];
 
-		public void loadCripsonItems()
+		public void LoadCripsonItems()
 		{			
 			int i = -1;
 			foreach (var id in idsca)
 			{
 				itemsMoney.Add(new VanillaItemAsCurrency(id, 9999L, new Item(id).Name, prices[++i]));
-				itemsMoneyIDs.Add(CustomCurrencyManager.RegisterCurrency(itemsMoney[itemsMoney.Count - 1]));
+				itemsMoneyIDs.Add(CustomCurrencyManager.RegisterCurrency(itemsMoney[^1]));
 			}
 		}
 
 		
 
-		public void loadCorruptionItems()
+		public void LoadCorruptionItems()
 		{
 			int i = -1;
 			foreach (var id in idsco)
 			{
 				itemsMoney.Add(new VanillaItemAsCurrency(id, 9999L, new Item(id).Name, prices[++i]));
-				itemsMoneyIDs.Add(CustomCurrencyManager.RegisterCurrency(itemsMoney[itemsMoney.Count - 1]));
+				itemsMoneyIDs.Add(CustomCurrencyManager.RegisterCurrency(itemsMoney[^1]));
 			}	
 		}
 
 		public override void Load()
 		{
+
 			Mod.AddNPCHeadTexture(Type, Texture.Replace("Traveler/Traveler", "Traveler/TravelerCrimson_Head"));
 
-			loadCripsonItems();
-			loadCorruptionItems();
-
-			
+			LoadCripsonItems();
+			LoadCorruptionItems();
 
 		}
 
@@ -239,25 +232,25 @@ namespace BrandonBox.NPCs.Traveler
 
 		public override List<string> SetNPCNameList() {
 			if (crimson)
-				return new List<string>(){
+				return [
 					"Ezra",
 					"Liora",
 					"Selene",
 					"Elara",
 					"Kael",
-				};
+				];
 
-			return new List<string>(){
+			return [
 			"Thorne",
 			"Jasper",
 			"Tamsin",
 			"Ronan",
 			"Caius"
-		};
+		];
 		}
 
 		public override string GetChat() {
-			WeightedRandom<string> chat = new WeightedRandom<string>();
+			WeightedRandom<string> chat = new();
 
 
 			chat.Add("Wonders from afar, eager for a trade?");
@@ -287,14 +280,11 @@ namespace BrandonBox.NPCs.Traveler
 		}
 
 		public override void SetChatButtons(ref string button, ref string button2) { // What the chat buttons are when you open up the chat UI
-			// if (TravelerAllowed.itemsIDs.Count != 0)
-				button = Language.GetTextValue("LegacyInterface.28");
+			button = Language.GetTextValue("LegacyInterface.28");
 		}
 
 		public override void OnChatButtonClicked(bool firstButton, ref string shop) {
-			// if (firstButton && TravelerAllowed.itemsIDs.Count != 0) {
-				shop = ShopName; // Name of the shop tab we want to open.
-			// }
+			shop = ShopName; // Name of the shop tab we want to open.
 		}
 
 
@@ -313,8 +303,6 @@ namespace BrandonBox.NPCs.Traveler
 				shop.Add(new Item(idsco[i]) { shopSpecialCurrency = itemsMoneyIDs[i], shopCustomPrice = 1}, MyConditions.crimpsonHardmode);
 				shop.Add(new Item(idsca[i]) { shopSpecialCurrency = itemsMoneyIDs[idsca.Count + i], shopCustomPrice = 1}, MyConditions.corruptionHardmode);
 			}
-
-
 			shop.Add(new Item(ItemID.ScourgeoftheCorruptor) { shopSpecialCurrency = itemsMoneyIDs[idsco.Count - 1], shopCustomPrice = 1}, MyConditions.planteraCrimson);
 			shop.Add(new Item(ItemID.VampireKnives) { shopSpecialCurrency = itemsMoneyIDs[2 * idsca.Count - 1], shopCustomPrice = 1}, MyConditions.planteraCorruption);
 			shop.Register();

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dylan\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\BrandonBox\\BrandonBox.csproj": {}
+    "/Users/albaud/Library/Application Support/Terraria/tModLoader/ModSources/BrandonBox/BrandonBox.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dylan\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\BrandonBox\\BrandonBox.csproj": {
+    "/Users/albaud/Library/Application Support/Terraria/tModLoader/ModSources/BrandonBox/BrandonBox.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dylan\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\BrandonBox\\BrandonBox.csproj",
-        "projectName": "BrandonBox",
-        "projectPath": "C:\\Users\\Dylan\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\BrandonBox\\BrandonBox.csproj",
-        "packagesPath": "C:\\Users\\Dylan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dylan\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\BrandonBox\\obj\\",
+        "projectUniqueName": "/Users/albaud/Library/Application Support/Terraria/tModLoader/ModSources/BrandonBox/BrandonBox.csproj",
+        "projectName": "BrandonBox2",
+        "projectPath": "/Users/albaud/Library/Application Support/Terraria/tModLoader/ModSources/BrandonBox/BrandonBox.csproj",
+        "packagesPath": "/Users/albaud/.nuget/packages/",
+        "outputPath": "/Users/albaud/Library/Application Support/Terraria/tModLoader/ModSources/BrandonBox/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dylan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/albaud/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -66,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

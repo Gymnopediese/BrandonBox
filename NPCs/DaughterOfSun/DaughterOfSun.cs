@@ -139,15 +139,9 @@ namespace BrandonBox.NPCs.DaughterOfSun
 	public class DaughterOfSun : ModNPC
 	{
 		public const string ShopName = "Shop";
-		public int NumberOfTimesTalkedTo = 0;
 
 		// private static int ShimmerHeadIndex;
 		private static Profiles.StackedNPCProfile NPCProfile;
-
-		public override void Load() {
-			// Adds our Shimmer Head to the NPCHeadLoader.
-			// ShimmerHeadIndex = Mod.AddNPCHeadTexture(Type, Texture + "_Shimmer_Head");
-		}
 
 		public override void SetStaticDefaults() {
 			Main.npcFrameCount[Type] = 25; // The total amount of frames the NPC has
@@ -219,7 +213,6 @@ namespace BrandonBox.NPCs.DaughterOfSun
 			return (TownNPCGuideWorld.rescuedTutorialTownNPC);
 		}
 
-		// ! trop styleeee
 		// Example Person needs a house built out of ExampleMod tiles. You can delete this whole method in your townNPC for the regular house conditions.
 		public override bool CheckConditions(int left, int right, int top, int bottom) {
 			int score = 0;
@@ -234,7 +227,6 @@ namespace BrandonBox.NPCs.DaughterOfSun
 					}
 				}
 			}
-
 			return (score >= ((right - left) * (bottom - top)) / 2);
 		}
 
@@ -300,7 +292,6 @@ namespace BrandonBox.NPCs.DaughterOfSun
 					// Main.SkipToTime(19500, false);
 				}
 			}
-			// els
 		}
 
 		public override bool CanGoToStatue(bool toKingStatue) => false;

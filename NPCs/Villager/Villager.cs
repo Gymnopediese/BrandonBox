@@ -1,47 +1,22 @@
-// using ExampleMod.Common;
-// using ExampleMod.Common.Configs;
-// using ExampleMod.Content.Biomes;
-// using ExampleMod.Content.Dusts;
-// using ExampleMod.Content.EmoteBubbles;
-// using ExampleMod.Content.Items;
-// using ExampleMod.Content.Items.Accessories;
-// using ExampleMod.Content.Items.Armor;
-// using ExampleMod.Content.Projectiles;
-// using ExampleMod.Content.Tiles;
-// using ExampleMod.Content.Tiles.Furniture;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.ItemDropRules;
-using Terraria.GameContent.Personalities;
-using Terraria.GameContent.UI;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.Utilities;
 using Terraria.DataStructures;
-// using BrandonBox.Tiles;
+
 namespace BrandonBox.NPCs.Villager
 {
-	// [AutoloadHead] and NPC.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
 	[AutoloadHead]
 	public class Villager : ModNPC
 	{
 		public static readonly int SPRITE_COUNT = 1000;
-
 		public const string ShopName = "Shop";
 		private string _texture;
 		private string _head_texture;
 		private int _num;
 		bool spawned = false;
-		// private static List<auto> profiles = new List<Texture>().Add(ModContent.Request<Texture>("BrandonBox/NPCs/Villager/VillagerProfile1"));
 		private Profiles.StackedNPCProfile NPCProfile;
 		public override void SetStaticDefaults() {
 			Main.npcFrameCount[Type] = 25; // The total amount of frames the NPC has
@@ -303,7 +278,6 @@ namespace BrandonBox.NPCs.Villager
 			Main.LocalPlayer.SetTalkNPC(i);
 		}
 		public override void Load() {
-			// Adds our Shimmer Head to the NPCHeadLoader.
 			for (int i = 0; i < SPRITE_COUNT; i++)
 				Mod.AddNPCHeadTexture(Type, Texture.Replace("Villager/Villager", "Villager/Villager" + i + "_Head"));
 		}

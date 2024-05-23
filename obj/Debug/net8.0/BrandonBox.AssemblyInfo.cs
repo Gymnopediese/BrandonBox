@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("BrandonBox")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("BrandonBox2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa7478f3b63d0ef83bbf35b9eb219e5365f37be2")]
-[assembly: System.Reflection.AssemblyProductAttribute("BrandonBox")]
-[assembly: System.Reflection.AssemblyTitleAttribute("BrandonBox")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4749fceb0ff24af797c0b4b8963a02873ae53fa")]
+[assembly: System.Reflection.AssemblyProductAttribute("BrandonBox2")]
+[assembly: System.Reflection.AssemblyTitleAttribute("BrandonBox2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.

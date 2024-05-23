@@ -22,4 +22,15 @@ Then I want a list of various original name for him in the following format:
 
 (its a c# string list)
 
-Then make it's description starting whit an emoji for the steam workshop
+Then make it's wiki page, with the following format:
+
+description
+
+== Spawn Conditions ==
+
+how it spawn
+
+== House Conditions ==
+
+how to make him move in
+

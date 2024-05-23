@@ -1,46 +1,11 @@
 using System.ComponentModel;
 using Terraria.ModLoader.Config;
 using Terraria;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
-using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.ItemDropRules;
-using Terraria.GameContent.Personalities;
-using Terraria.GameContent.UI;
-using Terraria.ID;
-using Terraria.Graphics.CameraModifiers;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
-using Terraria.Utilities;
-using Terraria.DataStructures;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using BrandonBox.NPCs.Villager;
 
 namespace BrandonBox.Systems
 {
-
-	// public class NPCsKiller : ModSystem {
-	// 	public override void OnWorldLoad() {
-	// 		// This is called when the world is loaded. This is a good place to set up any variables you need.
-	// 		// This is called after all ModSystem classes have been loaded.
-	// 	}
-
-
-	// 	public override void PostWorldLoad() {
-	// 		// This is called after all worlds have been loaded. This is a good place to do stuff that requires all worlds to be loaded.
-	// 	}
-
-	
-	// }
 
 	public class NPCsConfigs : ModConfig
 	{

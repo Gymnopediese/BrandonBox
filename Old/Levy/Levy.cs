@@ -40,11 +40,6 @@ namespace BrandonBox.NPCs.Levy
 		private static int ShimmerHeadIndex;
 		private static Profiles.StackedNPCProfile NPCProfile;
 
-		public override void Load() {
-			// Adds our Shimmer Head to the NPCHeadLoader.
-			ShimmerHeadIndex = Mod.AddNPCHeadTexture(Type, Texture + "_Shimmer_Head");
-		}
-
 		public override void SetStaticDefaults() {
 			Main.npcFrameCount[Type] = 25; // The total amount of frames the NPC has
 

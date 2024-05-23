@@ -11,6 +11,7 @@ using Terraria.ModLoader.IO;
 using BrandonBox.Items.Recipe;
 using Terraria.DataStructures;
 using Terraria.ObjectData;
+
 namespace BrandonBox.Items.WallCamera
 {
 	public class CameraTile : ModTile
@@ -79,7 +80,6 @@ namespace BrandonBox.Items.WallCamera
 			// Start a new Recipe.
 			resultItem.CreateRecipe()
 				.AddIngredient(ItemID.SuspiciousLookingEye)
-				.AddIngredient(ItemID.Lens, 3)
 				.AddIngredient(ItemID.IronBar, 5)
 				.AddIngredient(ItemID.Wire, 20)
 				.AddTile(TileID.DemonAltar)
