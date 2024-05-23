@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BrandonBox2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4749fceb0ff24af797c0b4b8963a02873ae53fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+645904c1a23e97c9c1c177af5be7f6844da94fb3")]
 [assembly: System.Reflection.AssemblyProductAttribute("BrandonBox2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BrandonBox2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

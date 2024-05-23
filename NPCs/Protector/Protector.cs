@@ -1,16 +1,12 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent;
-using Terraria.GameContent.Personalities;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
-using BrandonBox.Items.EyeCamera
+
 namespace BrandonBox.NPCs.Protector
 {
 	public class ProtectorPay : ModSystem
@@ -55,7 +51,7 @@ namespace BrandonBox.NPCs.Protector
 	{
 		public override bool CanBeHitByNPC(NPC npc, NPC attacker)
 		{
-			if (npc.townNPC && !npc.homeless && NPC.AnyNPCs(ModContent.NPCType<Protector>()))
+			if (npc.townNPC && NPC.AnyNPCs(ModContent.NPCType<Protector>()))
 				return false;
 			return base.CanBeHitByNPC(npc, attacker);
 		}
@@ -94,9 +90,17 @@ namespace BrandonBox.NPCs.Protector
 		}
 
 		public override bool CanTownNPCSpawn(int numTownNPCs) { // Requirements for the town NPC to spawn.
+
+			if (!ModContent.GetInstance<Systems.NPCsConfigs>().Protector) return false;
 			foreach (Player player in Main.player)
+			{
 				if (player.CountItem(ItemID.PlatinumCoin) >= 100)
+				{
+					Main.NewText("enought");
 					return true;
+				}
+			}
+			Main.NewText("not enohgru");
 			return false;
 		}
 
@@ -110,6 +114,8 @@ namespace BrandonBox.NPCs.Protector
 						score++;
 				}
 			}
+			// Main.NewText($"{score} {left} {right} {top} {bottom} {Main.LocalPlayer.position}");
+			Main.NewText(score + " " + left + " "  + right + " " + top + " " + right + " " + Main.LocalPlayer.position / 16);
 			return score >= 100;
 		}
 

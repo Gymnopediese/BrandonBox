@@ -561,5 +561,10 @@ Configs: {
 			Tooltip: If you save the config, all the existing instance of the Traveler will be removed !
 			Label: Traveler
 		}
+
+		Protector: {
+			Label: Protector
+			Tooltip: If you save the config, all the existing instance of the Protector will be removed !
+		}
 	}
 }

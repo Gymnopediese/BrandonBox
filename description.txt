@@ -1,5 +1,7 @@
 Wiki Now Available !!! : https://terrariamods.wiki.gg/wiki/BrandonBox2
 
+New NPC, The Protector: https://terrariamods.wiki.gg/wiki/BrandonBox2/Protector
+
 BrandonBox is an open source mod that add literaly INFINITE Town NPCs, here is a not INFINITE list:
 [list]
     [*] 🪦 Gravedigger
@@ -8,6 +10,7 @@ BrandonBox is an open source mod that add literaly INFINITE Town NPCs, here is a
 	[*] 🛍️ Pickpocket
 	[*] 🧳 Traveler
 	[*] 🌞 Daughter of the Sun
+	[*] ⛑️ Protector
 	[*] 🎣 FisherMan
 	[*] 💣 Creeper
 	[*] 💀 Death
@@ -17,3 +20,7 @@ BrandonBox is an open source mod that add literaly INFINITE Town NPCs, here is a
 	[*] 🐼 Poacher
 [/list]
 github page:  https://github.com/Gymnopediese/BrandonBox/tree/main
+
+If any error accurs, let me know in the steam discution.
+
+You can disable any NPC in the settings at any moment if one of them bug or just annoy you.
